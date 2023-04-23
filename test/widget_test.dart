@@ -7,14 +7,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mydrive/driver/landing/landing.dart';
+import 'package:mydrive/driver/dash/driver-dash.dart';
+
 
 import 'package:mydrive/main.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const Landing());
+    await tester.pumpWidget(const DriverDash());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
