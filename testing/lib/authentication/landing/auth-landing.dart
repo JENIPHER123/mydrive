@@ -12,8 +12,13 @@ class AuthLanding extends StatefulWidget {
 class _AuthLandingState extends State<AuthLanding> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Text('Testing Code Landing'),
+    return Scaffold(
+      body: Column(
+        children: const [
+          Image(image: AssetImage('images/car1.jpg')),
+          Text('Testing Code Landing'),
+        ],
+      ),
     );
   }
 }
