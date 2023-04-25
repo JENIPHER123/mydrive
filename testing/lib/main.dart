@@ -6,11 +6,12 @@ import 'package:testing/authentication/reg/auth-reg.dart';
 
 void main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     routes: {
-       '/':(context) => const AuthLanding(),
-       'auth-home':(context) => const AuthHome(),
-       'auth-login':(context) => const AuthLogin(),
-       'auth-reg':(context) => const AuthReg()
+      '/': (context) => const AuthLanding(),
+      'auth-home': (context) => const AuthHome(),
+      'auth-login': (context) => const AuthLogin(),
+      'auth-reg': (context) => const AuthReg()
     },
   ));
 }

@@ -15,7 +15,6 @@ class _AuthLandingState extends State<AuthLanding> {
     return Scaffold(
       body: Column(
         children: const [
-          Image(image: AssetImage('images/car1.jpg')),
           Text('Testing Code Landing'),
         ],
       ),

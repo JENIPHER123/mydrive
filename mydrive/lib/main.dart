@@ -28,6 +28,7 @@ import 'package:mydrive/general/rauting/main-rauting.dart';
 
 void main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     routes: {
 
       /* routing the main pages */
