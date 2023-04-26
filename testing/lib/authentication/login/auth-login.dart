@@ -12,19 +12,16 @@ class AuthLogin extends StatefulWidget {
 class _AuthLoginState extends State<AuthLogin> {
   @override
   Widget build(BuildContext context) {
-
     /* login details controller */
     final usernameController = TextEditingController();
     final passwordController = TextEditingController();
 
     /* sign in method/function */
-    void userSignIn(){
-
-    }
+    void userSignIn() {}
     return Scaffold(
-        backgroundColor: Color.fromARGB(255, 230, 229, 229),
-        body: Center(
-            child: Column(
+      backgroundColor: Color.fromARGB(255, 230, 229, 229),
+      body: Center(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             /* icon and/or logo */
@@ -48,10 +45,10 @@ class _AuthLoginState extends State<AuthLogin> {
               height: 10,
             ),
             /* username textfield */
-             Padding(
+            Padding(
               padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 24),
               child: TextField(
-                controller:  usernameController,
+                controller: usernameController,
                 decoration: const InputDecoration(
                     hintStyle: TextStyle(
                         fontWeight: FontWeight.bold,
@@ -73,11 +70,11 @@ class _AuthLoginState extends State<AuthLogin> {
             ),
 
             /* password textfield */
-             Padding(
+            Padding(
               padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 24),
               child: TextField(
                 controller: passwordController,
-                decoration:const  InputDecoration(
+                decoration: const InputDecoration(
                     hintText: 'Password',
                     hintStyle: TextStyle(
                         fontWeight: FontWeight.bold,
@@ -149,6 +146,8 @@ class _AuthLoginState extends State<AuthLogin> {
               ),
             ),
           ],
-        )));
+        ),
+      ),
+    );
   }
 }
