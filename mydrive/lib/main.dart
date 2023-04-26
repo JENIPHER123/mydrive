@@ -5,7 +5,6 @@ import 'package:mydrive/admin/failure/admin-failure.dart';
 import 'package:mydrive/admin/landing/admin-landing.dart';
 import 'package:mydrive/admin/login/admin-login.dart';
 import 'package:mydrive/admin/profile/admin-profile.dart';
-import 'package:mydrive/admin/register/admin-reg.dart';
 import 'package:mydrive/admin/success/admin-success.dart';
 import 'package:mydrive/client/add-job/client-add-job.dart';
 import 'package:mydrive/client/dash/client-dash.dart';
@@ -42,7 +41,7 @@ void main() {
       'admin-landing':(context) => const AdminLanding(),
       'admin-analytics':(context) => const AdminAnalytics(),
       'admin-login':(context) => const AdminLogin(),
-      'admin-reg':(context) => const AdminReg(),
+      
       'admin-profile':(context) => const AdminProfile(),
       'admin-failure':(context) => const AdminFailure(),
       'admin-success':(context) => const AdminSuccess(),

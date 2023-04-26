@@ -134,7 +134,9 @@ class _ClientLoginState extends State<ClientLogin> {
                 children: [
                   const Text("Don't have an account? "),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, 'client-reg');
+                    },
                     child: const Text(
                       "Register Here...",
                       style: TextStyle(

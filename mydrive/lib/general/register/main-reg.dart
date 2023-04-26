@@ -37,21 +37,6 @@ class _MainRegState extends State<MainReg> {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, 'admin-reg');
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromARGB(255, 121, 22, 15),
-                minimumSize: const Size(250, 50),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50)),
-              ),
-              child: Text('Admin Registration'),
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            ElevatedButton(
-              onPressed: () {
                 Navigator.pushNamed(context, 'driver-reg');
               },
               style: ElevatedButton.styleFrom(

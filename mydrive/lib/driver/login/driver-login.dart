@@ -135,7 +135,9 @@ class _DriverLoginState extends State<DriverLogin> {
                 children: [
                   const Text("Don't have an account? "),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, 'driver-reg');
+                    },
                     child: const Text(
                       "Register Here...",
                       style: TextStyle(
