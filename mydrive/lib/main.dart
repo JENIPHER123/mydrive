@@ -25,6 +25,7 @@ import 'package:mydrive/driver/select-job/driver-select-job.dart';
 import 'package:mydrive/driver/success/driver-success.dart';
 import 'package:mydrive/general/landing/main-landing.dart';
 import 'package:mydrive/general/rauting/main-rauting.dart';
+import 'package:mydrive/general/register/main-reg.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -34,6 +35,7 @@ void main() {
       /* routing the main pages */
       '/':(context) => const MainLanding(),
       'routing':(context) => const MainRauting(),
+      'main-reg':(context) => const MainReg(),
 
       /* routing the admin system */
       'admin-dash':(context) => const AdminDash(),

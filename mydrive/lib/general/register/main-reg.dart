@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
-class MainRauting extends StatefulWidget {
-  const MainRauting({super.key});
+class MainReg extends StatefulWidget {
+  const MainReg({super.key});
 
   @override
-  State<MainRauting> createState() => _MainRautingState();
+  State<MainReg> createState() => _MainRegState();
 }
 
-class _MainRautingState extends State<MainRauting> {
+class _MainRegState extends State<MainReg> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 236, 234, 234),
+      backgroundColor: Color.fromARGB(255, 236, 234, 234),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -27,7 +27,7 @@ class _MainRautingState extends State<MainRauting> {
               height: 20,
             ),
             const Text(
-              'Login to My Drive',
+              'Register with My Drive',
               style: TextStyle(
                   color: Color.fromARGB(255, 121, 120, 120),
                   fontWeight: FontWeight.bold),
@@ -37,7 +37,7 @@ class _MainRautingState extends State<MainRauting> {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, 'admin-login');
+                Navigator.pushNamed(context, 'admin-reg');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color.fromARGB(255, 121, 22, 15),
@@ -45,14 +45,14 @@ class _MainRautingState extends State<MainRauting> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50)),
               ),
-              child: Text('Admin Login'),
+              child: Text('Admin Registration'),
             ),
             const SizedBox(
               height: 30,
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, 'driver-login');
+                Navigator.pushNamed(context, 'driver-reg');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color.fromARGB(255, 121, 22, 15),
@@ -60,14 +60,14 @@ class _MainRautingState extends State<MainRauting> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50)),
               ),
-              child: const Text('Driver Login'),
+              child: const Text('Driver Registration'),
             ),
             const SizedBox(
               height: 30,
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, 'client-login');
+                Navigator.pushNamed(context, 'client-reg');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color.fromARGB(255, 121, 22, 15),
@@ -75,7 +75,7 @@ class _MainRautingState extends State<MainRauting> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50)),
               ),
-              child: const Text('Client Login'),
+              child: const Text('Client Registration'),
             ),
             const SizedBox(
               height: 20,
@@ -87,17 +87,17 @@ class _MainRautingState extends State<MainRauting> {
                   height: 20,
                 ),
                 const Text(
-                  "Don't have an account ? ",
+                  "Already have an account ? ",
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Color.fromARGB(255, 94, 92, 92)),
                 ),
                 TextButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, 'main-reg');
+                    Navigator.pushNamed(context, 'routing');
                   },
                   child: const Text(
-                    'Register Here ..',
+                    'Login Here ..',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Color.fromARGB(255, 121, 22, 15),
