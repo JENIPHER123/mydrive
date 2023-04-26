@@ -134,7 +134,9 @@ class _AuthLoginState extends State<AuthLogin> {
                 children: [
                   const Text("Don't have an account? "),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, 'auth-reg');
+                    },
                     child: const Text(
                       "Register Here...",
                       style: TextStyle(
