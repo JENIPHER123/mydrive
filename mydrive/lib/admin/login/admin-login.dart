@@ -100,7 +100,9 @@ class _AdminLoginState extends State<AdminLogin> {
               child: Row(
                 children: [
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, 'admin-forgot');
+                      },
                       child: const Text(
                         'Forgot Password...',
                         style: TextStyle(

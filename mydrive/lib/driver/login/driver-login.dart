@@ -100,7 +100,9 @@ class _DriverLoginState extends State<DriverLogin> {
               child: Row(
                 children: [
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, 'driver-forgot');
+                      },
                       child: const Text(
                         'Forgot Password...',
                         style: TextStyle(

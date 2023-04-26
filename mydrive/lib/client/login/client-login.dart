@@ -100,7 +100,9 @@ class _ClientLoginState extends State<ClientLogin> {
               child: Row(
                 children: [
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, 'client-forgot');
+                      },
                       child: const Text(
                         'Forgot Password...',
                         style: TextStyle(

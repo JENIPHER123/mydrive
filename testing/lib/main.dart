@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testing/authentication/forgot-pass/auth-forgot-pass.dart';
 import 'package:testing/authentication/home/auth-home.dart';
 import 'package:testing/authentication/landing/auth-landing.dart';
 import 'package:testing/authentication/login/auth-login.dart';
@@ -11,7 +12,8 @@ void main() {
       '/': (context) => const AuthLanding(),
       'auth-home': (context) => const AuthHome(),
       'auth-login': (context) => const AuthLogin(),
-      'auth-reg': (context) => const AuthReg()
+      'auth-reg': (context) => const AuthReg(),
+      'auth-forgot':(context) => const AuthForgot()
     },
   ));
 }
