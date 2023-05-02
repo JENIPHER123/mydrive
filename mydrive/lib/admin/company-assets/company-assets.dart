@@ -22,6 +22,7 @@ class _CompanyAssetsState extends State<CompanyAssets> {
       ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: const [Text('Company Assets')],
         ),
       ),

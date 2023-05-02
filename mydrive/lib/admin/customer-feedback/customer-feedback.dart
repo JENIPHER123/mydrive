@@ -14,14 +14,15 @@ class CustomerFeedback extends StatefulWidget {
 class _CustomerFeedbackState extends State<CustomerFeedback> {
   @override
   Widget build(BuildContext context) {
-   return Scaffold(
-       drawer: const AdminSideNav(),
+    return Scaffold(
+      drawer: const AdminSideNav(),
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 121, 22, 15),
         title: const Text('Analytics and Data'),
       ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: const [Text('Customer Feedback')],
         ),
       ),

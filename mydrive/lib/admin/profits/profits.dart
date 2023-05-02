@@ -22,6 +22,7 @@ class _ProfitsState extends State<Profits> {
       ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: const [Text('Company Profits')],
         ),
       ),
