@@ -121,7 +121,7 @@ class _ClientLoginState extends State<ClientLogin> {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, 'auth-home');
+                Navigator.pushNamed(context, 'client-dash');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color.fromARGB(255, 121, 22, 15),

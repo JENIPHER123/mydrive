@@ -120,7 +120,9 @@ class _AdminLoginState extends State<AdminLogin> {
               height: 10,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, 'admin-dash');
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color.fromARGB(255, 121, 22, 15),
                 minimumSize: const Size(350, 60),

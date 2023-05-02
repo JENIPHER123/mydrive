@@ -119,7 +119,9 @@ class _DriverLoginState extends State<DriverLogin> {
               height: 10,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, 'driver-dash');
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color.fromARGB(255, 121, 22, 15),
                 minimumSize: const Size(350, 60),
@@ -167,6 +169,7 @@ class _DriverLoginState extends State<DriverLogin> {
                 ),
               ],
             ),
+          
           ],
         ),
       ),
