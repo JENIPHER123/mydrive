@@ -33,7 +33,7 @@ class _ClientLoginState extends State<ClientLogin> {
             const SizedBox(
               height: 20,
             ),
-
+      
             /* welcome back you've been missed message */
             const Text(
               "Welcome back..(Client Login) ",
@@ -68,7 +68,7 @@ class _ClientLoginState extends State<ClientLogin> {
                     filled: true),
               ),
             ),
-
+      
             /* password textfield */
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 24),
@@ -93,7 +93,7 @@ class _ClientLoginState extends State<ClientLogin> {
                     filled: true),
               ),
             ),
-
+      
             /* forgot password */
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 24),
@@ -112,7 +112,7 @@ class _ClientLoginState extends State<ClientLogin> {
                 ],
               ),
             ),
-
+      
             /* sign in button */
             const SizedBox(
               height: 10,
@@ -127,7 +127,7 @@ class _ClientLoginState extends State<ClientLogin> {
               ),
               child: const Text('Login'),
             ),
-
+      
             /* don't have an account register */
             Padding(
               padding: const EdgeInsets.all(15.0),

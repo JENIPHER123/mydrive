@@ -34,7 +34,7 @@ class _DriverRegState extends State<DriverReg> {
             const SizedBox(
               height: 20,
             ),
-
+      
             /* welcome back you've been missed message */
             const Text(
               "Welcome back..(Driver Register) ",
@@ -69,7 +69,7 @@ class _DriverRegState extends State<DriverReg> {
                     filled: true),
               ),
             ),
-
+      
             /* password textfield */
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 24),
@@ -155,7 +155,7 @@ class _DriverRegState extends State<DriverReg> {
               ),
               child: const Text('Register'),
             ),
-
+      
             /* don't have an account register */
             Padding(
               padding: const EdgeInsets.all(18.0),

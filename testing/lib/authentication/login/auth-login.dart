@@ -100,15 +100,16 @@ class _AuthLoginState extends State<AuthLogin> {
               child: Row(
                 children: [
                   TextButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, 'auth-forgot');
-                      },
-                      child: const Text(
-                        'Forgot Password...',
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 131, 129, 128),
-                            fontWeight: FontWeight.bold),
-                      ))
+                    onPressed: () {
+                      Navigator.pushNamed(context, 'auth-forgot');
+                    },
+                    child: const Text(
+                      'Forgot Password...',
+                      style: TextStyle(
+                          color: Color.fromARGB(255, 131, 129, 128),
+                          fontWeight: FontWeight.bold),
+                    ),
+                  )
                 ],
               ),
             ),
