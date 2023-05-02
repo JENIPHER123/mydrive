@@ -1,11 +1,17 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:mydrive/admin/analytics/admin-analytics.dart';
+import 'package:mydrive/admin/company-assets/company-assets.dart';
+import 'package:mydrive/admin/customer-feedback/customer-feedback.dart';
 import 'package:mydrive/admin/dash/admin-adsh.dart';
 import 'package:mydrive/admin/failure/admin-failure.dart';
 import 'package:mydrive/admin/forgot-pass/admin-forgot-pass.dart';
 import 'package:mydrive/admin/landing/admin-landing.dart';
+import 'package:mydrive/admin/liabilities/liabilities.dart';
 import 'package:mydrive/admin/login/admin-login.dart';
 import 'package:mydrive/admin/profile/admin-profile.dart';
+import 'package:mydrive/admin/profits/profits.dart';
 import 'package:mydrive/admin/success/admin-success.dart';
 import 'package:mydrive/client/add-job/client-add-job.dart';
 import 'package:mydrive/client/dash/client-dash.dart';
@@ -47,6 +53,10 @@ void main() {
       'admin-profile': (context) => const AdminProfile(),
       'admin-failure': (context) => const AdminFailure(),
       'admin-success': (context) => const AdminSuccess(),
+      'admin-profits':(context) => const Profits(),
+      'admin-liabilities': (context)=>const Liabilities(),
+      'admin-assets':(context) => const CompanyAssets(),
+      'customer-feedback':(context) => const CustomerFeedback(),
 
       /* routing the client system */
       'client-add-job': (context) => const ClientAddJob(),

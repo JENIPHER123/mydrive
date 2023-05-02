@@ -33,7 +33,7 @@ class _AdminAnalyticsState extends State<AdminAnalytics> {
                       side: const BorderSide(
                           color: Color.fromARGB(255, 204, 202, 202), width: 3)),
                   onPressed: () {
-                    Navigator.pushNamed(context, '');
+                    Navigator.pushNamed(context, 'admin-profits');
                   },
                   child: Padding(
                     padding:
@@ -60,7 +60,7 @@ class _AdminAnalyticsState extends State<AdminAnalytics> {
                       side: const BorderSide(
                           color: Color.fromARGB(255, 204, 202, 202), width: 3)),
                   onPressed: () {
-                    Navigator.pushNamed(context, '');
+                    Navigator.pushNamed(context, 'admin-assets');
                   },
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -83,7 +83,7 @@ class _AdminAnalyticsState extends State<AdminAnalytics> {
                       side: const BorderSide(
                           color: Color.fromARGB(255, 204, 202, 202), width: 3)),
                   onPressed: () {
-                    Navigator.pushNamed(context, '');
+                    Navigator.pushNamed(context, 'admin-liabilities');
                   },
                   child: Padding(
                     padding:
@@ -107,7 +107,7 @@ class _AdminAnalyticsState extends State<AdminAnalytics> {
                       side: const BorderSide(
                           color: Color.fromARGB(255, 204, 202, 202), width: 3)),
                   onPressed: () {
-                    Navigator.pushNamed(context, '');
+                    Navigator.pushNamed(context, 'customer-feedback');
                   },
                   child: Column(
                     children: const [
