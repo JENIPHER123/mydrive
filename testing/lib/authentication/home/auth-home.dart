@@ -17,12 +17,109 @@ class _AuthHomeState extends State<AuthHome> {
       drawer: const SideNavbar(),
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 121, 22, 15),
-        title: Text('testing'),
+        title: Text('Analytics and Data'),
       ),
-      body: Column(
-        children: const [
-          Text('Testing Code Home'),
-        ],
+      body: Center(
+        child: GridView(
+            padding: EdgeInsets.all(20),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2, crossAxisSpacing: 14, mainAxisSpacing: 14),
+            children: [
+              Container(
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      side: const BorderSide(
+                          color: Color.fromARGB(255, 204, 202, 202), width: 3)),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '');
+                  },
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 24, horizontal: 8),
+                    child: Column(
+                      children: const [
+                        Image(image: AssetImage('images/chart3.gif')),
+                        SizedBox(
+                          height: 12,
+                        ),
+                        Text(
+                          'Our Profit Margins',
+                          style: TextStyle(color: Colors.grey),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      side: const BorderSide(
+                          color: Color.fromARGB(255, 204, 202, 202), width: 3)),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '');
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: const [
+                        Image(image: AssetImage('images/chart4.gif')),
+                        Text(
+                          'Manage Our Assets',
+                          style: TextStyle(color: Colors.grey),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      side: const BorderSide(
+                          color: Color.fromARGB(255, 204, 202, 202), width: 3)),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '');
+                  },
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 24, horizontal: 8),
+                    child: Column(
+                      children: const [
+                        Image(image: AssetImage('images/liability1.gif')),
+                        Text(
+                          'Current Liabilities ',
+                          style: TextStyle(color: Colors.grey),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      side: const BorderSide(
+                          color: Color.fromARGB(255, 204, 202, 202), width: 3)),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '');
+                  },
+                  child: Column(
+                    children: const [
+                      Image(image: AssetImage('images/feedback1.gif')),
+                      Text(
+                        'customer Feedback',
+                        style: TextStyle(color: Colors.grey),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ]),
       ),
     );
   }
