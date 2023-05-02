@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
+import '../widgets/sidenav/sidenav.dart';
+
 class ClientLanding extends StatefulWidget {
   const ClientLanding({super.key});
 
@@ -12,7 +14,12 @@ class ClientLanding extends StatefulWidget {
 class _ClientLandingState extends State<ClientLanding> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return  Scaffold(
+         drawer: const ClientSideNav(),
+      appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 121, 22, 15),
+        title: const Text('Client Landing....'),
+      ),
       body: Center(
         child: Text('Client Landing Page'),
       ),

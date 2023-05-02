@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
+import '../widgets/sidenav/sidenav.dart';
+
 class DriverDash extends StatefulWidget {
   const DriverDash({super.key});
 
@@ -12,7 +14,12 @@ class DriverDash extends StatefulWidget {
 class _DriverDashState extends State<DriverDash> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
+      drawer: const DriverSideNav(),
+      appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 121, 22, 15),
+        title: const Text('Welcome Driver....'),
+      ),
       body: Center(
         child: Text('Driver DashPage'),
       ),
