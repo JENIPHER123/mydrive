@@ -120,10 +120,12 @@ class _ClientLoginState extends State<ClientLogin> {
               height: 10,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, 'auth-home');
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color.fromARGB(255, 121, 22, 15),
-                minimumSize: const Size(300, 50),
+                minimumSize: const Size(350, 60),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8)),
               ),

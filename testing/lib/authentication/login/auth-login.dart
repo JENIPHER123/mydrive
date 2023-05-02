@@ -119,7 +119,9 @@ class _AuthLoginState extends State<AuthLogin> {
               height: 10,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, 'auth-home');
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color.fromARGB(255, 121, 22, 15),
                 minimumSize: const Size(300, 50),
