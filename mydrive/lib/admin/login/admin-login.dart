@@ -19,7 +19,7 @@ class _AdminLoginState extends State<AdminLogin> {
     /* sign in method/function */
     void userSignIn() {}
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 230, 229, 229),
+      backgroundColor: Colors.white,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -33,7 +33,7 @@ class _AdminLoginState extends State<AdminLogin> {
             const SizedBox(
               height: 20,
             ),
-        
+
             /* welcome back you've been missed message */
             const Text(
               "Welcome back..(Admin Login) ",
@@ -51,8 +51,9 @@ class _AdminLoginState extends State<AdminLogin> {
                 controller: usernameController,
                 decoration: const InputDecoration(
                     hintStyle: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 201, 199, 199)),
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromRGBO(158, 157, 157, 1),
+                    ),
                     hintText: 'Username',
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
@@ -64,11 +65,11 @@ class _AdminLoginState extends State<AdminLogin> {
                         color: Color.fromARGB(255, 216, 211, 210),
                       ),
                     ),
-                    fillColor: Colors.white,
+                    fillColor: Color.fromARGB(255, 223, 221, 221),
                     filled: true),
               ),
             ),
-        
+
             /* password textfield */
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 24),
@@ -77,8 +78,9 @@ class _AdminLoginState extends State<AdminLogin> {
                 decoration: const InputDecoration(
                     hintText: 'Password',
                     hintStyle: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 201, 199, 199)),
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromRGBO(158, 157, 157, 1),
+                    ),
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
                         color: Colors.white,
@@ -89,11 +91,11 @@ class _AdminLoginState extends State<AdminLogin> {
                         color: Color.fromARGB(255, 216, 211, 210),
                       ),
                     ),
-                    fillColor: Colors.white,
+                    fillColor: Color.fromARGB(255, 223, 221, 221),
                     filled: true),
               ),
             ),
-        
+
             /* forgot password */
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 24),
@@ -112,7 +114,7 @@ class _AdminLoginState extends State<AdminLogin> {
                 ],
               ),
             ),
-        
+
             /* sign in button */
             const SizedBox(
               height: 10,
@@ -121,13 +123,13 @@ class _AdminLoginState extends State<AdminLogin> {
               onPressed: () {},
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color.fromARGB(255, 121, 22, 15),
-                minimumSize: const Size(300, 50),
+                minimumSize: const Size(350, 60),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8)),
               ),
               child: const Text('Login'),
             ),
-        
+
             /* don't have an account register */
             Padding(
               padding: const EdgeInsets.all(18.0),

@@ -10,6 +10,7 @@ import 'package:mydrive/admin/success/admin-success.dart';
 import 'package:mydrive/client/add-job/client-add-job.dart';
 import 'package:mydrive/client/dash/client-dash.dart';
 import 'package:mydrive/client/failure/client-failure.dart';
+import 'package:mydrive/client/forgot-pass/client-forgot-pass.dart';
 import 'package:mydrive/client/landing/client-landing.dart';
 import 'package:mydrive/client/login/client-login.dart';
 import 'package:mydrive/client/profile/client-profile.dart';
@@ -56,7 +57,7 @@ void main() {
       'client-profile': (context) => const ClientProfile(),
       'client-reg': (context) => const ClientReg(),
       'client-success': (context) => const ClientSuccess(),
-      'client-forgot': (context) => const ClientFailure(),
+      'client-forgot': (context) => const ClientForgot(),
 
       /* routing the driver system */
       'driver-dash': (context) => const DriverDash(),
