@@ -20,8 +20,10 @@ class _DriverDashState extends State<DriverDash> {
         backgroundColor: const Color.fromARGB(255, 121, 22, 15),
         title: const Text('Welcome Driver....'),
       ),
-      body: Center(
-        child: Text('Driver DashPage'),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Text('Driver DashPage'),
+        ),
       ),
     );
   }

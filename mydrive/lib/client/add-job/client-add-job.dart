@@ -20,8 +20,10 @@ class _ClientAddJobState extends State<ClientAddJob> {
         backgroundColor: const Color.fromARGB(255, 121, 22, 15),
         title: const Text('Client Add Job....'),
       ),
-      body: Center(
-        child: Text('Client Add Job Page'),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Text('Client Add Job Page'),
+        ),
       ),
     );
   }

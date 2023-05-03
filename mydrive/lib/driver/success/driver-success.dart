@@ -13,8 +13,10 @@ class _DriverSuccessState extends State<DriverSuccess> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(
-        child: Text('Driver Success Page'),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Text('Driver Success Page'),
+        ),
       ),
     );
   }

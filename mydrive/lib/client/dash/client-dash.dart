@@ -20,8 +20,10 @@ class _ClientDashState extends State<ClientDash> {
         backgroundColor: const Color.fromARGB(255, 121, 22, 15),
         title: const Text('Client Dashboard....'),
       ),
-      body: Center(
-        child: Text('Client Dash Page'),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Text('Client Dash Page'),
+        ),
       ),
     );
   }

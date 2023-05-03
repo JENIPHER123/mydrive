@@ -20,8 +20,10 @@ class _DriverLandingState extends State<DriverLanding> {
         backgroundColor: const Color.fromARGB(255, 121, 22, 15),
         title: const Text('Landing....'),
       ),
-      body: Center(
-        child: Text('Driver Landing Page'),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Text('Driver Landing Page'),
+        ),
       ),
     );
   }

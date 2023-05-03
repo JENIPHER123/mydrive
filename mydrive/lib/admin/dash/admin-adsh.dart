@@ -19,8 +19,10 @@ class _AdminDashState extends State<AdminDash> {
         backgroundColor: const Color.fromARGB(255, 121, 22, 15),
         title: const Text('Welcome Admin....'),
       ),
-      body: const Center(
-        child: Text('Admin Admin Page'),
+      body:const SingleChildScrollView(
+        child: const Center(
+          child: Text('Admin Admin Page'),
+        ),
       ),
     );
   }

@@ -20,8 +20,10 @@ class _AdminLandingState extends State<AdminLanding> {
         backgroundColor: const Color.fromARGB(255, 121, 22, 15),
         title: const Text('Landing....'),
       ),
-      body: Center(
-        child: Text('Admin Landing Page'),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Text('Admin Landing Page'),
+        ),
       ),
     );
   }

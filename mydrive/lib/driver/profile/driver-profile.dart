@@ -20,8 +20,10 @@ class _DriverProfileState extends State<DriverProfile> {
         backgroundColor: const Color.fromARGB(255, 121, 22, 15),
         title: const Text('Driver Profile....'),
       ),
-      body: Center(
-        child: Text('Driver Profile Page'),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Text('Driver Profile Page'),
+        ),
       ),
     );
   }

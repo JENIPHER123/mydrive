@@ -20,8 +20,10 @@ class _DriverSelectJobState extends State<DriverSelectJob> {
         backgroundColor: const Color.fromARGB(255, 121, 22, 15),
         title: const Text('Driver Select Job....'),
       ),
-      body: Center(
-        child: Text('Driver Select Job Page'),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Text('Driver Select Job Page'),
+        ),
       ),
     );
   }

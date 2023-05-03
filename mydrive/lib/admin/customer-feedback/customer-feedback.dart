@@ -20,10 +20,12 @@ class _CustomerFeedbackState extends State<CustomerFeedback> {
         backgroundColor: const Color.fromARGB(255, 121, 22, 15),
         title: const Text('Analytics and Data'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const [Text('Customer Feedback')],
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [Text('Customer Feedback')],
+          ),
         ),
       ),
     );

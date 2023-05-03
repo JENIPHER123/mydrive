@@ -13,8 +13,10 @@ class _ClientSuccessState extends State<ClientSuccess> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(
-        child: Text('Client Success Page'),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Text('Client Success Page'),
+        ),
       ),
     );
   }

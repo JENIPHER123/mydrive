@@ -20,10 +20,12 @@ class _LiabilitiesState extends State<Liabilities> {
         backgroundColor: const Color.fromARGB(255, 121, 22, 15),
         title: const Text('Analytics and Data'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const [Text('Company Liabilities')],
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [Text('Company Liabilities')],
+          ),
         ),
       ),
     );

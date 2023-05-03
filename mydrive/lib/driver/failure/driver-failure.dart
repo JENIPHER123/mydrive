@@ -13,8 +13,10 @@ class _DriverFailureState extends State<DriverFailure> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(
-        child: Text('Driver Failure Page'),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Text('Driver Failure Page'),
+        ),
       ),
     );
   }

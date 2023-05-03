@@ -13,8 +13,10 @@ class _AdminFailureState extends State<AdminFailure> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(
-        child: Text('Admin Failure Page'),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Text('Admin Failure Page'),
+        ),
       ),
     );
   }
