@@ -30,17 +30,17 @@ class DriverSideNav extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.bar_chart),
-            title: Text('Select Job'),
-            onTap: () {
-              Navigator.pushNamed(context, 'driver-select-job');
-            },
-          ),
-          ListTile(
             leading: Icon(Icons.notifications),
             title: Text('Dashboard'),
             onTap: () {
               Navigator.pushNamed(context, 'driver-dash');
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.bar_chart),
+            title: Text('Select Job'),
+            onTap: () {
+              Navigator.pushNamed(context, 'driver-select-job');
             },
           ),
           const Divider(),

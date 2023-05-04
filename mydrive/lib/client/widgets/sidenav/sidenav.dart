@@ -29,6 +29,13 @@ class ClientSideNav extends StatelessWidget {
                   fit: BoxFit.fill, image: AssetImage('images/back1.jpg')),
             ),
           ),
+           ListTile(
+            leading: Icon(Icons.notifications),
+            title: Text('Dashboard'),
+            onTap: () {
+              Navigator.pushNamed(context, 'client-dash');
+            },
+          ),
           ListTile(
             leading: Icon(Icons.bar_chart),
             title: Text('Add Job'),
@@ -36,13 +43,7 @@ class ClientSideNav extends StatelessWidget {
               Navigator.pushNamed(context, 'client-add-job');
             },
           ),
-          ListTile(
-            leading: Icon(Icons.notifications),
-            title: Text('Dashboard'),
-            onTap: () {
-              Navigator.pushNamed(context, 'client-dash');
-            },
-          ),
+         
           const Divider(),
           ListTile(
             leading: Icon(Icons.settings),
