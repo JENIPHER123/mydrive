@@ -21,10 +21,34 @@ class _CompanyAssetsState extends State<CompanyAssets> {
         backgroundColor: const Color.fromARGB(255, 121, 22, 15),
         title: const Text('Analytics and Data'),
       ),
-      body: SingleChildScrollView(
-        child: Center(
+      body: Center(
+        child: SingleChildScrollView(
           child: Column(
             children: [
+              const SizedBox(
+                height: 12,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, 'admin-analytics');
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color.fromARGB(255, 139, 22, 14),
+                  minimumSize: const Size(370, 70),
+                  side: const BorderSide(
+                    color: Color.fromARGB(255, 250, 249, 249),
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+                child: const Text(
+                  'Explore Analytical Data',
+                ),
+              ),
+              const SizedBox(
+                height: 12,
+              ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
@@ -56,27 +80,6 @@ class _CompanyAssetsState extends State<CompanyAssets> {
               const Button1(),
               const SizedBox(
                 height: 30,
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, 'admin-analytics');
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(255, 139, 22, 14),
-                  minimumSize: const Size(370, 70),
-                  side: const BorderSide(
-                    color: Color.fromARGB(255, 250, 249, 249),
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-                child: const Text(
-                  'Explore More Analytical Data',
-                ),
-              ),
-              const SizedBox(
-                height: 12,
               ),
             ],
           ),

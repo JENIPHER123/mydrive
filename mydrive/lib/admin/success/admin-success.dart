@@ -13,10 +13,8 @@ class _AdminSuccessState extends State<AdminSuccess> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: SingleChildScrollView(
-        child: Center(
-          child: Text('Admin Success Page'),
-        ),
+      body: Center(
+        child: Text('Admin Success Page'),
       ),
     );
   }

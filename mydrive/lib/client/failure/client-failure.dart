@@ -13,10 +13,8 @@ class _ClientFailureState extends State<ClientFailure> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: SingleChildScrollView(
-        child: Center(
-          child: Text('Client Failure Page'),
-        ),
+      body: Center(
+        child: Text('Client Failure Page'),
       ),
     );
   }

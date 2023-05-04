@@ -20,10 +20,8 @@ class _ClientLandingState extends State<ClientLanding> {
         backgroundColor: const Color.fromARGB(255, 121, 22, 15),
         title: const Text('Client Landing....'),
       ),
-      body: SingleChildScrollView(
-        child: Center(
-          child: Text('Client Landing Page'),
-        ),
+      body: Center(
+        child: Text('Client Landing Page'),
       ),
     );
   }

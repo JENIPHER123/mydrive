@@ -30,17 +30,17 @@ class AdminSideNav extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.bar_chart),
-            title: Text('Analytics'),
-            onTap: () {
-              Navigator.pushNamed(context, 'admin-analytics');
-            },
-          ),
-          ListTile(
             leading: Icon(Icons.notifications),
             title: Text('Dashboard'),
             onTap: () {
               Navigator.pushNamed(context, 'admin-dash');
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.bar_chart),
+            title: Text('Analytics'),
+            onTap: () {
+              Navigator.pushNamed(context, 'admin-analytics');
             },
           ),
           const Divider(),

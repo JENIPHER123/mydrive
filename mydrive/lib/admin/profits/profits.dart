@@ -20,10 +20,35 @@ class _ProfitsState extends State<Profits> {
         backgroundColor: const Color.fromARGB(255, 121, 22, 15),
         title: const Text('Analytics and Data'),
       ),
-      body: SingleChildScrollView(
-        child: Center(
+      body: Center(
+        child: SingleChildScrollView(
           child: Column(
             children: [
+              const SizedBox(
+                height: 30,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, 'admin-analytics');
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color.fromARGB(255, 139, 22, 14),
+                  minimumSize: const Size(370, 70),
+                  side: const BorderSide(
+                    color: Color.fromARGB(255, 250, 249, 249),
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+                child: const Text(
+                  'Explore More Analytical Data',
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Divider(),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
@@ -31,14 +56,16 @@ class _ProfitsState extends State<Profits> {
                   children: const [
                     Text(
                       'Good Afternoon',
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                     ),
                     SizedBox(
                       width: 4,
                     ),
                     Text(
                       'Jenipher',
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                     )
                   ],
                 ),
@@ -50,10 +77,11 @@ class _ProfitsState extends State<Profits> {
               const SizedBox(
                 height: 20,
               ),
+              const Divider(),
               Card(
                 child: ListTile(
                   leading: const CircleAvatar(
-                    backgroundColor: Colors.orange,
+                    backgroundColor: const Color.fromARGB(255, 121, 22, 15),
                     child: Text(
                       "1",
                       style: TextStyle(
@@ -82,7 +110,7 @@ class _ProfitsState extends State<Profits> {
               Card(
                 child: ListTile(
                   leading: const CircleAvatar(
-                    backgroundColor: Colors.orange,
+                    backgroundColor: const Color.fromARGB(255, 121, 22, 15),
                     child: Text(
                       "2",
                       style: TextStyle(
@@ -111,7 +139,7 @@ class _ProfitsState extends State<Profits> {
               Card(
                 child: ListTile(
                   leading: const CircleAvatar(
-                    backgroundColor: Colors.orange,
+                    backgroundColor: const Color.fromARGB(255, 121, 22, 15),
                     child: Text(
                       "3",
                       style: TextStyle(
@@ -140,7 +168,7 @@ class _ProfitsState extends State<Profits> {
               Card(
                 child: ListTile(
                   leading: const CircleAvatar(
-                    backgroundColor: Colors.orange,
+                    backgroundColor: const Color.fromARGB(255, 121, 22, 15),
                     child: Text(
                       "4",
                       style: TextStyle(
@@ -161,27 +189,6 @@ class _ProfitsState extends State<Profits> {
                       Text('45,333,040'),
                     ],
                   ),
-                ),
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, 'admin-analytics');
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(255, 139, 22, 14),
-                  minimumSize: const Size(370, 70),
-                  side: const BorderSide(
-                    color: Color.fromARGB(255, 250, 249, 249),
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-                child: const Text(
-                  'Explore More Analytical Data',
                 ),
               ),
               const SizedBox(

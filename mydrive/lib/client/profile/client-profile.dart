@@ -21,10 +21,8 @@ class _ClientProfileState extends State<ClientProfile> {
         backgroundColor: const Color.fromARGB(255, 121, 22, 15),
         title: const Text('Client Profile....'),
       ),
-      body: SingleChildScrollView(
-        child: Center(
-          child: Text('Client Profile Page'),
-        ),
+      body: Center(
+        child: Text('Client Profile Page'),
       ),
     );
   }
