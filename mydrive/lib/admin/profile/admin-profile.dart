@@ -24,6 +24,7 @@ class _AdminProfileState extends State<AdminProfile> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            
             Container(
               width: double.infinity,
               height: 170,
@@ -39,12 +40,12 @@ class _AdminProfileState extends State<AdminProfile> {
               children: [
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 20, horizontal: 10),
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 0, horizontal: 0),
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        minimumSize: Size(80, 50),
-                        backgroundColor: const Color.fromARGB(255, 121, 22, 15),
+                        minimumSize: Size(100, 50),
+                        backgroundColor: Color.fromARGB(255, 141, 105, 103),
                       ),
                       onPressed: () {
                         showDialog(
@@ -195,12 +196,12 @@ class _AdminProfileState extends State<AdminProfile> {
                 ),
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 20, horizontal: 10),
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 0, horizontal: 0),
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         minimumSize: Size(80, 50),
-                        backgroundColor: const Color.fromARGB(255, 121, 22, 15),
+                        backgroundColor: Color.fromARGB(255, 158, 81, 75),
                       ),
                       onPressed: () {
                         showDialog(

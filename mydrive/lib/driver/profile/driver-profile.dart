@@ -39,12 +39,12 @@ class _DriverProfileState extends State<DriverProfile> {
               children: [
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 20, horizontal: 10),
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 0, horizontal: 0),
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         minimumSize: Size(80, 50),
-                        backgroundColor: const Color.fromARGB(255, 121, 22, 15),
+                        backgroundColor: Color.fromARGB(255, 141, 105, 103),
                       ),
                       onPressed: () {
                         showDialog(
@@ -195,12 +195,12 @@ class _DriverProfileState extends State<DriverProfile> {
                 ),
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 20, horizontal: 10),
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 0, horizontal: 0),
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         minimumSize: Size(80, 50),
-                        backgroundColor: const Color.fromARGB(255, 121, 22, 15),
+                        backgroundColor: Color.fromARGB(255, 158, 81, 75),
                       ),
                       onPressed: () {
                         showDialog(
