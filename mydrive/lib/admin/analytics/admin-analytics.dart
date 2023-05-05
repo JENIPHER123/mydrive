@@ -22,7 +22,7 @@ class _AdminAnalyticsState extends State<AdminAnalytics> {
       ),
       body: Center(
         child: GridView(
-            padding: EdgeInsets.all(20),
+            padding: EdgeInsets.symmetric(vertical: 70, horizontal: 10),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2, crossAxisSpacing: 14, mainAxisSpacing: 14),
             children: [
