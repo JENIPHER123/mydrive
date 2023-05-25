@@ -36,6 +36,7 @@ import 'general/register/main-reg.dart';
 
 void main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     routes: {
       /* routing the main pages */
       '/': (context) => const MainLanding(),
@@ -51,10 +52,10 @@ void main() {
       'admin-profile': (context) => const AdminProfile(),
       'admin-failure': (context) => const AdminFailure(),
       'admin-success': (context) => const AdminSuccess(),
-      'admin-profits':(context) => const Profits(),
-      'admin-liabilities': (context)=>const Liabilities(),
-      'admin-assets':(context) => const CompanyAssets(),
-      'customer-feedback':(context) => const CustomerFeedback(),
+      'admin-profits': (context) => const Profits(),
+      'admin-liabilities': (context) => const Liabilities(),
+      'admin-assets': (context) => const CompanyAssets(),
+      'customer-feedback': (context) => const CustomerFeedback(),
 
       /* routing the client system */
       'client-add-job': (context) => const ClientAddJob(),
@@ -80,4 +81,3 @@ void main() {
     },
   ));
 }
-
