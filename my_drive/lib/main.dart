@@ -1,125 +1,83 @@
 import 'package:flutter/material.dart';
 
+import 'admin/analytics/admin-analytics.dart';
+import 'admin/company-assets/company-assets.dart';
+import 'admin/customer-feedback/customer-feedback.dart';
+import 'admin/dash/admin-adsh.dart';
+import 'admin/failure/admin-failure.dart';
+import 'admin/forgot-pass/admin-forgot-pass.dart';
+import 'admin/landing/admin-landing.dart';
+import 'admin/liabilities/liabilities.dart';
+import 'admin/login/admin-login.dart';
+import 'admin/profile/admin-profile.dart';
+import 'admin/profits/profits.dart';
+import 'admin/success/admin-success.dart';
+import 'client/add-job/client-add-job.dart';
+import 'client/dash/client-dash.dart';
+import 'client/failure/client-failure.dart';
+import 'client/forgot-pass/client-forgot-pass.dart';
+import 'client/landing/client-landing.dart';
+import 'client/login/client-login.dart';
+import 'client/profile/client-profile.dart';
+import 'client/register/client-reg.dart';
+import 'client/success/client-success.dart';
+import 'driver/dash/driver-dash.dart';
+import 'driver/failure/driver-failure.dart';
+import 'driver/forgot-pass/driver-forgot-pass.dart';
+import 'driver/landing/driver-landing.dart';
+import 'driver/login/driver-login.dart';
+import 'driver/profile/driver-profile.dart';
+import 'driver/register/driver-reg.dart';
+import 'driver/select-job/driver-select-job.dart';
+import 'driver/success/driver-success.dart';
+import 'general/landing/main-landing.dart';
+import 'general/rauting/main-rauting.dart';
+import 'general/register/main-reg.dart';
+
 void main() {
-  runApp(const MyApp());
+  runApp(MaterialApp(
+    routes: {
+      /* routing the main pages */
+      '/': (context) => const MainLanding(),
+      'routing': (context) => const MainRauting(),
+      'main-reg': (context) => const MainReg(),
+
+      /* routing the admin system */
+      'admin-dash': (context) => const AdminDash(),
+      'admin-landing': (context) => const AdminLanding(),
+      'admin-analytics': (context) => const AdminAnalytics(),
+      'admin-login': (context) => const AdminLogin(),
+      'admin-forgot': (context) => const AdminForgot(),
+      'admin-profile': (context) => const AdminProfile(),
+      'admin-failure': (context) => const AdminFailure(),
+      'admin-success': (context) => const AdminSuccess(),
+      'admin-profits':(context) => const Profits(),
+      'admin-liabilities': (context)=>const Liabilities(),
+      'admin-assets':(context) => const CompanyAssets(),
+      'customer-feedback':(context) => const CustomerFeedback(),
+
+      /* routing the client system */
+      'client-add-job': (context) => const ClientAddJob(),
+      'client-dash': (context) => const ClientDash(),
+      'client-failure': (context) => const ClientFailure(),
+      'client-landing': (context) => const ClientLanding(),
+      'client-login': (context) => const ClientLogin(),
+      'client-profile': (context) => const ClientProfile(),
+      'client-reg': (context) => const ClientReg(),
+      'client-success': (context) => const ClientSuccess(),
+      'client-forgot': (context) => const ClientForgot(),
+
+      /* routing the driver system */
+      'driver-dash': (context) => const DriverDash(),
+      'driver-failure': (context) => const DriverFailure(),
+      'driver-landing': (context) => const DriverLanding(),
+      'driver-login': (context) => const DriverLogin(),
+      'driver-profile': (context) => const DriverProfile(),
+      'driver-reg': (context) => const DriverReg(),
+      'driver-select-job': (context) => const DriverSelectJob(),
+      'driver-success': (context) => const DriverSuccess(),
+      'driver-forgot': (context) => const DriverForgot()
+    },
+  ));
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a blue toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
-}
