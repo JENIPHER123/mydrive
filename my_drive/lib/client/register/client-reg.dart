@@ -166,7 +166,7 @@ class _ClientRegState extends State<ClientReg> {
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromARGB(255, 121, 22, 15),
-                    minimumSize: const Size(300, 50),
+                    minimumSize: const Size(310, 55),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8)),
                   ),
