@@ -59,7 +59,10 @@ class _AdminDashState extends State<AdminDash> {
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(60))),
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pushNamed(
+                                      context, 'admin-analytics');
+                                },
                                 child: Icon(Icons.analytics),
                               ),
                               const SizedBox(
@@ -83,7 +86,9 @@ class _AdminDashState extends State<AdminDash> {
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(60))),
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pushNamed(context, 'admin-profits');
+                                },
                                 child: Icon(Icons.money_off_csred),
                               ),
                               const SizedBox(
@@ -107,7 +112,10 @@ class _AdminDashState extends State<AdminDash> {
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(60))),
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pushNamed(
+                                      context, 'admin-liabilities');
+                                },
                                 child: Icon(Icons.house),
                               ),
                               const SizedBox(
@@ -131,7 +139,9 @@ class _AdminDashState extends State<AdminDash> {
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(60))),
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pushNamed(context, 'admin-profile');
+                                },
                                 child: Icon(Icons.person),
                               ),
                               const SizedBox(
