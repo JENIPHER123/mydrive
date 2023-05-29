@@ -40,7 +40,7 @@ class DriverSideNav extends StatelessWidget {
             leading: Icon(Icons.bar_chart),
             title: Text('Select Job'),
             onTap: () {
-              Navigator.pushNamed(context, 'select-job');
+              Navigator.pushNamed(context, 'driver-select-job');
             },
           ),
           const Divider(),
