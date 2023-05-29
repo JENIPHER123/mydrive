@@ -5,7 +5,7 @@ class ClientSideNav extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     return Drawer(
+    return Drawer(
       child: ListView(
         children: [
           UserAccountsDrawerHeader(
@@ -33,14 +33,14 @@ class ClientSideNav extends StatelessWidget {
             leading: Icon(Icons.notifications),
             title: Text('Dashboard'),
             onTap: () {
-              Navigator.pushNamed(context, 'driver-dash');
+              Navigator.pushNamed(context, 'client-dash');
             },
           ),
           ListTile(
             leading: Icon(Icons.bar_chart),
             title: Text('Add Job'),
             onTap: () {
-              Navigator.pushNamed(context, 'add-job');
+              Navigator.pushNamed(context, 'client-add-job');
             },
           ),
           const Divider(),
