@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "417883530618",
+    "project_id": "mydrive-8e7ae",
+    "storage_bucket": "mydrive-8e7ae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:417883530618:android:1a6f504a80b883918362c3",
+        "android_client_info": {
+          "package_name": "com.example.my_drive"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYKQc2sgzFpx_1BxQtYLs8iYd3yKG45NQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
