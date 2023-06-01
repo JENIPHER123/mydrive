@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class DriverLogin extends StatefulWidget {
   const DriverLogin({super.key});
@@ -8,6 +10,31 @@ class DriverLogin extends StatefulWidget {
 }
 
 class _DriverLoginState extends State<DriverLogin> {
+  /* initializing firebase */
+  Future<FirebaseApp> _initializeFirebase() async {
+    FirebaseApp firebaseApp = await Firebase.initializeApp();
+    return firebaseApp;
+  }
+
+  /* login function */
+  static Future<User?> loginUsingEmailPassword(
+      {required String email,
+      required String password,
+      required BuildContext context}) async {
+    FirebaseAuth auth = FirebaseAuth.instance;
+    User? user;
+    try {
+      UserCredential userCredential = await auth.signInWithEmailAndPassword(
+          email: email, password: password);
+      user = userCredential.user;
+    } on FirebaseAuthException catch (e) {
+      if (e.code == "user-not-found") {
+        print('No User found for that Email');
+      }
+    }
+    return user;
+  }
+
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   @override
@@ -127,8 +154,15 @@ class _DriverLoginState extends State<DriverLogin> {
                 height: 10,
               ),
               ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, 'driver-dash');
+                onPressed: () async {
+                  User? user = await loginUsingEmailPassword(
+                      email: emailController.text,
+                      password: passwordController.text,
+                      context: context);
+                  print(user);
+                  if (user != null) {
+                    Navigator.pushNamed(context, 'driver-dash');
+                  }
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color.fromARGB(255, 121, 22, 15),

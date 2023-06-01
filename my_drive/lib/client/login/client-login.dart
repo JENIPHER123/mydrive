@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class ClientLogin extends StatefulWidget {
   const ClientLogin({super.key});
@@ -8,6 +10,30 @@ class ClientLogin extends StatefulWidget {
 }
 
 class _ClientLoginState extends State<ClientLogin> {
+     /* initializing firebase */
+  Future<FirebaseApp> _initializeFirebase() async {
+    FirebaseApp firebaseApp = await Firebase.initializeApp();
+    return firebaseApp;
+  }
+
+  /* login function */
+  static Future<User?> loginUsingEmailPassword(
+      {required String email,
+      required String password,
+      required BuildContext context}) async {
+    FirebaseAuth auth = FirebaseAuth.instance;
+    User? user;
+    try {
+      UserCredential userCredential = await auth.signInWithEmailAndPassword(
+          email: email, password: password);
+      user = userCredential.user;
+    } on FirebaseAuthException catch (e) {
+      if (e.code == "user-not-found") {
+        print('No User found for that Email');
+      }
+    }
+    return user;
+  }
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   @override
@@ -128,9 +154,18 @@ class _ClientLoginState extends State<ClientLogin> {
                 height: 10,
               ),
               ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, 'client-dash');
+                 onPressed: () async {
+                   User? user = await loginUsingEmailPassword(
+                            email: emailController.text,
+                            password: passwordController.text,
+                            context: context);
+                        print(user);
+                        if (user != null) {
+                           Navigator.pushNamed(context, 'client-dash');
+                        }
+                 
                 },
+                
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color.fromARGB(255, 121, 22, 15),
                   minimumSize: const Size(310, 55),
