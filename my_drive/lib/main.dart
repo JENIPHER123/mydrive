@@ -33,8 +33,11 @@ import 'driver/success/driver-success.dart';
 import 'general/landing/main-landing.dart';
 import 'general/rauting/main-rauting.dart';
 import 'general/register/main-reg.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     routes: {
