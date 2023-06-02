@@ -35,7 +35,7 @@ class _MainRautingState extends State<MainRauting> {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, 'admin-login');
+                Navigator.pushNamed(context, 'admin-access-code');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color.fromARGB(255, 121, 22, 15),

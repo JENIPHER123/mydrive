@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_drive/admin/access-code/access-code.dart';
 
 import 'admin/analytics/admin-analytics.dart';
 import 'admin/company-assets/company-assets.dart';
@@ -47,6 +48,7 @@ Future main() async {
       'main-reg': (context) => const MainReg(),
 
       /* routing the admin system */
+      'admin-access-code':(context) => const AccessCode(),
       'admin-dash': (context) => const AdminDash(),
       'admin-landing': (context) => const AdminLanding(),
       'admin-analytics': (context) => const AdminAnalytics(),
