@@ -10,7 +10,7 @@ class ClientLogin extends StatefulWidget {
 }
 
 class _ClientLoginState extends State<ClientLogin> {
-     /* initializing firebase */
+  /* initializing firebase */
   Future<FirebaseApp> _initializeFirebase() async {
     FirebaseApp firebaseApp = await Firebase.initializeApp();
     return firebaseApp;
@@ -30,10 +30,34 @@ class _ClientLoginState extends State<ClientLogin> {
     } on FirebaseAuthException catch (e) {
       if (e.code == "user-not-found") {
         print('No User found for that Email');
+        /* error dialog box for wrong client details entered */
+        showDialog(
+          context: context,
+          builder: (ctx) => AlertDialog(
+            title: const Text("Error!!"),
+            content: const Text("You have entered wrong details."),
+            actions: <Widget>[
+              TextButton(
+                onPressed: () {
+                  Navigator.of(ctx).pop();
+                },
+                child: Container(
+                  color: const Color.fromARGB(255, 121, 22, 15),
+                  padding: const EdgeInsets.all(14),
+                  child: const Text(
+                    "okay",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
       }
     }
     return user;
   }
+
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   @override
@@ -154,18 +178,16 @@ class _ClientLoginState extends State<ClientLogin> {
                 height: 10,
               ),
               ElevatedButton(
-                 onPressed: () async {
-                   User? user = await loginUsingEmailPassword(
-                            email: emailController.text,
-                            password: passwordController.text,
-                            context: context);
-                        print(user);
-                        if (user != null) {
-                           Navigator.pushNamed(context, 'client-dash');
-                        }
-                 
+                onPressed: () async {
+                  User? user = await loginUsingEmailPassword(
+                      email: emailController.text,
+                      password: passwordController.text,
+                      context: context);
+                  print(user);
+                  if (user != null) {
+                    Navigator.pushNamed(context, 'client-dash');
+                  }
                 },
-                
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color.fromARGB(255, 121, 22, 15),
                   minimumSize: const Size(310, 55),

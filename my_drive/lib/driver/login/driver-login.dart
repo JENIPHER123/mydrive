@@ -30,6 +30,29 @@ class _DriverLoginState extends State<DriverLogin> {
     } on FirebaseAuthException catch (e) {
       if (e.code == "user-not-found") {
         print('No User found for that Email');
+        /* error dialog box for wrong client details entered */
+        showDialog(
+          context: context,
+          builder: (ctx) => AlertDialog(
+            title: const Text("Error!!"),
+            content: const Text("You have entered wrong details."),
+            actions: <Widget>[
+              TextButton(
+                onPressed: () {
+                  Navigator.of(ctx).pop();
+                },
+                child: Container(
+                  color: const Color.fromARGB(255, 121, 22, 15),
+                  padding: const EdgeInsets.all(14),
+                  child: const Text(
+                    "okay",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
       }
     }
     return user;
