@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class DriverReg extends StatefulWidget {
@@ -163,7 +164,38 @@ class _DriverRegState extends State<DriverReg> {
                   height: 10,
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    FirebaseAuth.instance.createUserWithEmailAndPassword(
+                        email: emailController.text.trim(),
+                        password: passwordController.text.trim());
+                    showDialog(
+                      context: context,
+                      builder: (ctx) => AlertDialog(
+                        title: const Text(
+                          "Registration Successful!!!",
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                        content: const Image(
+                            image: AssetImage('assets/images/success1.gif')),
+                        actions: <Widget>[
+                          TextButton(
+                            onPressed: () {
+                              Navigator.of(ctx).pop();
+                              Navigator.pushNamed(context, 'driver-login');
+                            },
+                            child: Container(
+                              color: Color.fromARGB(255, 131, 129, 129),
+                              padding: const EdgeInsets.all(14),
+                              child: const Text(
+                                "okay",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromARGB(255, 121, 22, 15),
                     minimumSize: const Size(310, 55),
