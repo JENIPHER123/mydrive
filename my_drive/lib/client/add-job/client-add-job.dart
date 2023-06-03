@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/sidenav/sidenav.dart';
@@ -16,6 +17,45 @@ class _ClientAddJobState extends State<ClientAddJob> {
   final jobstatusController = TextEditingController();
   final payController = TextEditingController();
   final requirementsController = TextEditingController();
+
+/* adding data to firebase database
+
+1.Declare controllers and set in respective textfields
+2. create a method for coding the functions and add the required fields
+3. add forestore instance
+4. map data to json file
+5. Push json data to firebase using the previously created firestore instance
+
+
+Updating Database
+
+1. Use the create methodology outlined above and write over the data
+
+ */
+
+  Future createJob(
+      {required String car_type,
+      required String client_id,
+      required String driver_id,
+      required String job_area,
+      required String job_period,
+      required String job_status,
+      required String pay,
+      required String resuirements}) async {
+    final docUser = FirebaseFirestore.instance.collection('jobs').doc('job_31');
+    final json = {
+      'car_type': car_type,
+      'client_is': client_id,
+      'driver_id': driver_id,
+      'job_area': job_area,
+      'job_period': job_period,
+      'job_status': job_status,
+      'pay': pay,
+      'requirements': resuirements
+    };
+    await docUser.set(json);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,114 +109,147 @@ class _ClientAddJobState extends State<ClientAddJob> {
                                   showDialog(
                                       context: context,
                                       builder: (ctx) => AlertDialog(
-                                            title: const Center(
-                                              child: Text(
-                                                "Add New Job",
-                                                style: TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                  color: Color.fromARGB(
-                                                      255, 121, 22, 15),
-                                                ),
-                                              ),
-                                            ),
-                                            content: Column(
-                                              children: [
-                                                const SizedBox(height: 20),
-                                                TextField(
-                                                  controller: cartypeController,
-                                                  decoration:
-                                                      const InputDecoration(
-                                                    hintStyle: TextStyle(
-                                                      color: Color.fromRGBO(
-                                                          158, 157, 157, 1),
-                                                    ),
-                                                    hintText: 'Car Type',
-                                                  ),
-                                                ),
-                                                const SizedBox(height: 10),
-                                                TextField(
-                                                  controller: jobareaController,
-                                                  decoration:
-                                                      const InputDecoration(
-                                                    hintStyle: TextStyle(
-                                                      color: Color.fromRGBO(
-                                                          158, 157, 157, 1),
-                                                    ),
-                                                    hintText: 'Job Area',
-                                                  ),
-                                                ),
-                                                const SizedBox(height: 10),
-                                                TextField(
-                                                  controller:
-                                                      jobperiodController,
-                                                  decoration:
-                                                      const InputDecoration(
-                                                    hintStyle: TextStyle(
-                                                      color: Color.fromRGBO(
-                                                          158, 157, 157, 1),
-                                                    ),
-                                                    hintText: 'Job Period',
-                                                  ),
-                                                ),
-                                                const SizedBox(height: 10),
-                                                TextField(
-                                                  controller:
-                                                      jobstatusController,
-                                                  decoration:
-                                                      const InputDecoration(
-                                                    hintStyle: TextStyle(
-                                                      color: Color.fromRGBO(
-                                                          158, 157, 157, 1),
-                                                    ),
-                                                    hintText: 'Job Status',
-                                                  ),
-                                                ),
-                                                const SizedBox(height: 10),
-                                                TextField(
-                                                  controller: payController,
-                                                  decoration:
-                                                      const InputDecoration(
-                                                    hintStyle: TextStyle(
-                                                      color: Color.fromRGBO(
-                                                          158, 157, 157, 1),
-                                                    ),
-                                                    hintText: 'Pay',
-                                                  ),
-                                                ),
-                                                const SizedBox(height: 10),
-                                                TextField(
-                                                  controller:
-                                                      requirementsController,
-                                                  decoration: InputDecoration(
-                                                    hintStyle: TextStyle(
-                                                      color: Color.fromRGBO(
-                                                          158, 157, 157, 1),
-                                                    ),
-                                                    hintText: 'Requirements',
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                            actions: <Widget>[
-                                              TextButton(
-                                                onPressed: () {
-                                                  Navigator.of(ctx).pop();
-                                                  
-                                                },
-                                                child: Container(
-                                                  color: const Color.fromARGB(
-                                                      255, 121, 22, 15),
-                                                  padding:
-                                                      const EdgeInsets.all(14),
-                                                  child: const Text(
-                                                    "save details",
-                                                    style: TextStyle(
-                                                        color: Colors.white),
+                                              title: const Center(
+                                                child: Text(
+                                                  "Add New Job",
+                                                  style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Color.fromARGB(
+                                                        255, 121, 22, 15),
                                                   ),
                                                 ),
                                               ),
-                                            ],
-                                          ));
+                                              content: Column(
+                                                children: [
+                                                  const SizedBox(height: 20),
+                                                  TextField(
+                                                    controller:
+                                                        cartypeController,
+                                                    decoration:
+                                                        const InputDecoration(
+                                                      hintStyle: TextStyle(
+                                                        color: Color.fromRGBO(
+                                                            158, 157, 157, 1),
+                                                      ),
+                                                      hintText: 'Car Type',
+                                                    ),
+                                                  ),
+                                                  const SizedBox(height: 10),
+                                                  TextField(
+                                                    controller:
+                                                        jobareaController,
+                                                    decoration:
+                                                        const InputDecoration(
+                                                      hintStyle: TextStyle(
+                                                        color: Color.fromRGBO(
+                                                            158, 157, 157, 1),
+                                                      ),
+                                                      hintText: 'Job Area',
+                                                    ),
+                                                  ),
+                                                  const SizedBox(height: 10),
+                                                  TextField(
+                                                    controller:
+                                                        jobperiodController,
+                                                    decoration:
+                                                        const InputDecoration(
+                                                      hintStyle: TextStyle(
+                                                        color: Color.fromRGBO(
+                                                            158, 157, 157, 1),
+                                                      ),
+                                                      hintText: 'Job Period',
+                                                    ),
+                                                  ),
+                                                  const SizedBox(height: 10),
+                                                  TextField(
+                                                    controller:
+                                                        jobstatusController,
+                                                    decoration:
+                                                        const InputDecoration(
+                                                      hintStyle: TextStyle(
+                                                        color: Color.fromRGBO(
+                                                            158, 157, 157, 1),
+                                                      ),
+                                                      hintText: 'Job Status',
+                                                    ),
+                                                  ),
+                                                  const SizedBox(height: 10),
+                                                  TextField(
+                                                    controller: payController,
+                                                    decoration:
+                                                        const InputDecoration(
+                                                      hintStyle: TextStyle(
+                                                        color: Color.fromRGBO(
+                                                            158, 157, 157, 1),
+                                                      ),
+                                                      hintText: 'Pay',
+                                                    ),
+                                                  ),
+                                                  const SizedBox(height: 10),
+                                                  TextField(
+                                                    controller:
+                                                        requirementsController,
+                                                    decoration: InputDecoration(
+                                                      hintStyle: TextStyle(
+                                                        color: Color.fromRGBO(
+                                                            158, 157, 157, 1),
+                                                      ),
+                                                      hintText: 'Requirements',
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              actions: <Widget>[
+                                                ElevatedButton(
+                                                    style: ElevatedButton
+                                                        .styleFrom(
+                                                      backgroundColor:
+                                                          const Color.fromARGB(
+                                                              255, 121, 22, 15),
+                                                    ),
+                                                    onPressed: () {
+                                                      final car_type =
+                                                          cartypeController
+                                                              .text;
+                                                      final client_id = '';
+                                                      final driver_id = '';
+                                                      final job_area =
+                                                          jobareaController
+                                                              .text;
+                                                      final job_period =
+                                                          jobperiodController
+                                                              .text;
+                                                      final job_status =
+                                                          jobstatusController
+                                                              .text;
+                                                      final pay =
+                                                          payController.text;
+                                                      final requirements =
+                                                          cartypeController
+                                                              .text;
+
+                                                      createJob(
+                                                          car_type: car_type,
+                                                          client_id: client_id,
+                                                          driver_id: driver_id,
+                                                          job_area: job_area,
+                                                          job_period:
+                                                              job_period,
+                                                          job_status:
+                                                              job_status,
+                                                          pay: pay,
+                                                          resuirements:
+                                                              requirements);
+                                                      Navigator.of(ctx).pop();
+                                                    },
+                                                    child: const Text(
+                                                      'Save details',
+                                                      style: TextStyle(
+                                                          color: Colors.white,
+                                                          fontWeight:
+                                                              FontWeight.bold),
+                                                    ))
+                                              ]));
                                 },
                                 child: Icon(Icons.analytics),
                               ),
