@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import '../widgets/sidenav/sidenav.dart';
 
 class Liabilities extends StatefulWidget {
@@ -10,9 +10,31 @@ class Liabilities extends StatefulWidget {
 }
 
 class _LiabilitiesState extends State<Liabilities> {
+  /* variable declaration */
+  final lossamountController = TextEditingController();
+  final lossperiodController = TextEditingController();
+  final lossyearController = TextEditingController();
+
+  /* function for creating data */
+  Future createLoss({
+    required String loss_amount,
+    required String loss_period,
+    required String loss_year,
+  }) async {
+    final docUser = FirebaseFirestore.instance
+        .collection('liabilities_losses')
+        .doc('asset trial');
+    final json = {
+      'loss_amount': loss_amount,
+      'loss_period': loss_period,
+      'loss_year': loss_year,
+    };
+    await docUser.set(json);
+  }
+
   @override
   Widget build(BuildContext context) {
-     return Scaffold(
+    return Scaffold(
       drawer: const AdminSideNav(),
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 121, 22, 15),
@@ -74,6 +96,297 @@ class _LiabilitiesState extends State<Liabilities> {
               ),
               const SizedBox(
                 height: 20,
+              ),
+              const Divider(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Column(
+                    children: [
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor:
+                                const Color.fromARGB(255, 121, 22, 15),
+                            minimumSize: const Size(60, 60),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(60))),
+                        onPressed: () {
+                          showDialog(
+                              context: context,
+                              builder: (ctx) => AlertDialog(
+                                    backgroundColor:
+                                        Color.fromARGB(255, 194, 193, 193),
+                                    content: Stack(
+                                      children: <Widget>[
+                                        Form(
+                                          child: SingleChildScrollView(
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: <Widget>[
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.all(8.0),
+                                                  child: Positioned(
+                                                    top: -190.0,
+                                                    child: InkResponse(
+                                                      onTap: () {
+                                                        Navigator.of(context)
+                                                            .pop();
+                                                      },
+                                                      child: const CircleAvatar(
+                                                        child:
+                                                            Icon(Icons.close),
+                                                        backgroundColor:
+                                                            const Color
+                                                                    .fromARGB(
+                                                                255,
+                                                                121,
+                                                                22,
+                                                                15),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsets.all(8.0),
+                                                  child: TextField(
+                                                    controller:
+                                                        lossamountController,
+                                                    decoration:
+                                                        const InputDecoration(
+                                                            hintText:
+                                                                'Loss Amount',
+                                                            hintStyle: TextStyle(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                                color:
+                                                                    Color.fromARGB(
+                                                                        255,
+                                                                        201,
+                                                                        199,
+                                                                        199)),
+                                                            enabledBorder:
+                                                                OutlineInputBorder(
+                                                              borderSide:
+                                                                  BorderSide(
+                                                                color: Colors
+                                                                    .white,
+                                                              ),
+                                                            ),
+                                                            focusedBorder:
+                                                                OutlineInputBorder(
+                                                              borderSide:
+                                                                  BorderSide(
+                                                                color: Color
+                                                                    .fromARGB(
+                                                                        255,
+                                                                        216,
+                                                                        211,
+                                                                        210),
+                                                              ),
+                                                            ),
+                                                            fillColor:
+                                                                Colors.white,
+                                                            filled: true),
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsets.all(8.0),
+                                                  child: TextField(
+                                                    controller:
+                                                        lossyearController,
+                                                    decoration:
+                                                        const InputDecoration(
+                                                            hintText: 'Year',
+                                                            hintStyle: TextStyle(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                                color:
+                                                                    Color.fromARGB(
+                                                                        255,
+                                                                        201,
+                                                                        199,
+                                                                        199)),
+                                                            enabledBorder:
+                                                                OutlineInputBorder(
+                                                              borderSide:
+                                                                  BorderSide(
+                                                                color: Colors
+                                                                    .white,
+                                                              ),
+                                                            ),
+                                                            focusedBorder:
+                                                                OutlineInputBorder(
+                                                              borderSide:
+                                                                  BorderSide(
+                                                                color: Color
+                                                                    .fromARGB(
+                                                                        255,
+                                                                        216,
+                                                                        211,
+                                                                        210),
+                                                              ),
+                                                            ),
+                                                            fillColor:
+                                                                Colors.white,
+                                                            filled: true),
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsets.all(8.0),
+                                                  child: TextField(
+                                                    controller:
+                                                        lossperiodController,
+                                                    decoration:
+                                                        const InputDecoration(
+                                                            hintText: 'Year',
+                                                            hintStyle: TextStyle(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                                color:
+                                                                    Color.fromARGB(
+                                                                        255,
+                                                                        201,
+                                                                        199,
+                                                                        199)),
+                                                            enabledBorder:
+                                                                OutlineInputBorder(
+                                                              borderSide:
+                                                                  BorderSide(
+                                                                color: Colors
+                                                                    .white,
+                                                              ),
+                                                            ),
+                                                            focusedBorder:
+                                                                OutlineInputBorder(
+                                                              borderSide:
+                                                                  BorderSide(
+                                                                color: Color
+                                                                    .fromARGB(
+                                                                        255,
+                                                                        216,
+                                                                        211,
+                                                                        210),
+                                                              ),
+                                                            ),
+                                                            fillColor:
+                                                                Colors.white,
+                                                            filled: true),
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.all(8.0),
+                                                  child: ElevatedButton(
+                                                    onPressed: () {
+                                                      final loss_year =
+                                                          lossyearController
+                                                              .text;
+                                                      final loss_period =
+                                                          lossperiodController
+                                                              .text;
+                                                      final loss_amount =
+                                                          lossamountController
+                                                              .text;
+
+                                                      createLoss(
+                                                        loss_amount:
+                                                            loss_amount,
+                                                        loss_period:
+                                                            loss_period,
+                                                        loss_year: loss_year,
+                                                      );
+                                                      Navigator.of(ctx).pop();
+                                                    },
+                                                    style: ElevatedButton
+                                                        .styleFrom(
+                                                      backgroundColor:
+                                                          const Color.fromARGB(
+                                                              255, 121, 22, 15),
+                                                      minimumSize:
+                                                          const Size(300, 50),
+                                                      shape:
+                                                          RoundedRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          8)),
+                                                    ),
+                                                    child: const Text(
+                                                        'Save Details'),
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ));
+                        },
+                        child: Icon(Icons.analytics),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Text(
+                        'Add Liability',
+                        style: TextStyle(
+                          color: const Color.fromARGB(255, 121, 22, 15),
+                        ),
+                      )
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor:
+                                const Color.fromARGB(255, 121, 22, 15),
+                            minimumSize: const Size(60, 60),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(60))),
+                        onPressed: () {},
+                        child: Icon(Icons.money_off_csred),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Text(
+                        'Filter Year',
+                        style: TextStyle(
+                          color: const Color.fromARGB(255, 121, 22, 15),
+                        ),
+                      )
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor:
+                                const Color.fromARGB(255, 121, 22, 15),
+                            minimumSize: const Size(60, 60),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(60))),
+                        onPressed: () {},
+                        child: Icon(Icons.house),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Text(
+                        'Filter Type',
+                        style: TextStyle(
+                          color: const Color.fromARGB(255, 121, 22, 15),
+                        ),
+                      )
+                    ],
+                  ),
+                ],
               ),
               const Divider(),
               const Card(
