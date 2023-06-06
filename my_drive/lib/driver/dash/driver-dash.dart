@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/sidenav/sidenav.dart';
@@ -10,6 +11,36 @@ class DriverDash extends StatefulWidget {
 }
 
 class _DriverDashState extends State<DriverDash> {
+  /* variable declaration */
+  final customernameController = TextEditingController();
+  final customeridController = TextEditingController();
+  final customercommentController = TextEditingController();
+  final customertypeController = TextEditingController();
+  final customeremailController = TextEditingController();
+  final customerphoneController = TextEditingController();
+
+  /* function for creating data */
+  Future customerFeedback(
+      {required String customer_name,
+      required String customer_id,
+      required String customer_comment,
+      required String customer_type,
+      required String customer_email,
+      required String customer_phone}) async {
+    final docUser = FirebaseFirestore.instance
+        .collection('customer_feedback')
+        .doc('Feedback  trial');
+    final json = {
+      'customer_name': customer_name,
+      'customer_id': customer_id,
+      'customer_comment': customer_comment,
+      'customer_type': customer_type,
+      'customer_email': customer_email,
+      'customer_phone': customer_phone,
+    };
+    await docUser.set(json);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,13 +115,13 @@ class _DriverDashState extends State<DriverDash> {
                                         borderRadius:
                                             BorderRadius.circular(60))),
                                 onPressed: () {},
-                                child: Icon(Icons.money_off_csred),
+                                child: Icon(Icons.house),
                               ),
                               const SizedBox(
                                 height: 10,
                               ),
                               const Text(
-                                'Ranking',
+                                'History',
                                 style: TextStyle(
                                   color: const Color.fromARGB(255, 121, 22, 15),
                                 ),
@@ -107,14 +138,402 @@ class _DriverDashState extends State<DriverDash> {
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(60))),
-                                onPressed: () {},
+                                onPressed: () {
+                                  showDialog(
+                                      context: context,
+                                      builder: (ctx) => AlertDialog(
+                                            backgroundColor: Color.fromARGB(
+                                                255, 194, 193, 193),
+                                            content: Stack(
+                                              children: <Widget>[
+                                                Form(
+                                                  child: SingleChildScrollView(
+                                                    child: Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.min,
+                                                      children: <Widget>[
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .all(8.0),
+                                                          child: Positioned(
+                                                            top: -190.0,
+                                                            child: InkResponse(
+                                                              onTap: () {
+                                                                Navigator.of(
+                                                                        context)
+                                                                    .pop();
+                                                              },
+                                                              child:
+                                                                  const CircleAvatar(
+                                                                child: Icon(
+                                                                    Icons
+                                                                        .close),
+                                                                backgroundColor:
+                                                                    const Color
+                                                                            .fromARGB(
+                                                                        255,
+                                                                        121,
+                                                                        22,
+                                                                        15),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsets.all(
+                                                                  8.0),
+                                                          child: TextField(
+                                                            controller:
+                                                                customernameController,
+                                                            decoration:
+                                                                const InputDecoration(
+                                                                    hintText:
+                                                                        'Customer Name',
+                                                                    hintStyle: TextStyle(
+                                                                        fontWeight:
+                                                                            FontWeight
+                                                                                .bold,
+                                                                        color: Color.fromARGB(
+                                                                            255,
+                                                                            201,
+                                                                            199,
+                                                                            199)),
+                                                                    enabledBorder:
+                                                                        OutlineInputBorder(
+                                                                      borderSide:
+                                                                          BorderSide(
+                                                                        color: Colors
+                                                                            .white,
+                                                                      ),
+                                                                    ),
+                                                                    focusedBorder:
+                                                                        OutlineInputBorder(
+                                                                      borderSide:
+                                                                          BorderSide(
+                                                                        color: Color.fromARGB(
+                                                                            255,
+                                                                            216,
+                                                                            211,
+                                                                            210),
+                                                                      ),
+                                                                    ),
+                                                                    fillColor:
+                                                                        Colors
+                                                                            .white,
+                                                                    filled:
+                                                                        true),
+                                                          ),
+                                                        ),
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsets.all(
+                                                                  8.0),
+                                                          child: TextField(
+                                                            controller:
+                                                                customeridController,
+                                                            decoration:
+                                                                const InputDecoration(
+                                                                    hintText:
+                                                                        'Customer ID',
+                                                                    hintStyle: TextStyle(
+                                                                        fontWeight:
+                                                                            FontWeight
+                                                                                .bold,
+                                                                        color: Color.fromARGB(
+                                                                            255,
+                                                                            201,
+                                                                            199,
+                                                                            199)),
+                                                                    enabledBorder:
+                                                                        OutlineInputBorder(
+                                                                      borderSide:
+                                                                          BorderSide(
+                                                                        color: Colors
+                                                                            .white,
+                                                                      ),
+                                                                    ),
+                                                                    focusedBorder:
+                                                                        OutlineInputBorder(
+                                                                      borderSide:
+                                                                          BorderSide(
+                                                                        color: Color.fromARGB(
+                                                                            255,
+                                                                            216,
+                                                                            211,
+                                                                            210),
+                                                                      ),
+                                                                    ),
+                                                                    fillColor:
+                                                                        Colors
+                                                                            .white,
+                                                                    filled:
+                                                                        true),
+                                                          ),
+                                                        ),
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsets.all(
+                                                                  8.0),
+                                                          child: TextField(
+                                                            controller:
+                                                                customercommentController,
+                                                            decoration:
+                                                                const InputDecoration(
+                                                                    hintText:
+                                                                        'Year',
+                                                                    hintStyle: TextStyle(
+                                                                        fontWeight:
+                                                                            FontWeight
+                                                                                .bold,
+                                                                        color: Color.fromARGB(
+                                                                            255,
+                                                                            201,
+                                                                            199,
+                                                                            199)),
+                                                                    enabledBorder:
+                                                                        OutlineInputBorder(
+                                                                      borderSide:
+                                                                          BorderSide(
+                                                                        color: Colors
+                                                                            .white,
+                                                                      ),
+                                                                    ),
+                                                                    focusedBorder:
+                                                                        OutlineInputBorder(
+                                                                      borderSide:
+                                                                          BorderSide(
+                                                                        color: Color.fromARGB(
+                                                                            255,
+                                                                            216,
+                                                                            211,
+                                                                            210),
+                                                                      ),
+                                                                    ),
+                                                                    fillColor:
+                                                                        Colors
+                                                                            .white,
+                                                                    filled:
+                                                                        true),
+                                                          ),
+                                                        ),
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsets.all(
+                                                                  8.0),
+                                                          child: TextField(
+                                                            controller:
+                                                                customeremailController,
+                                                            decoration:
+                                                                const InputDecoration(
+                                                                    hintText:
+                                                                        'Customer Email',
+                                                                    hintStyle: TextStyle(
+                                                                        fontWeight:
+                                                                            FontWeight
+                                                                                .bold,
+                                                                        color: Color.fromARGB(
+                                                                            255,
+                                                                            201,
+                                                                            199,
+                                                                            199)),
+                                                                    enabledBorder:
+                                                                        OutlineInputBorder(
+                                                                      borderSide:
+                                                                          BorderSide(
+                                                                        color: Colors
+                                                                            .white,
+                                                                      ),
+                                                                    ),
+                                                                    focusedBorder:
+                                                                        OutlineInputBorder(
+                                                                      borderSide:
+                                                                          BorderSide(
+                                                                        color: Color.fromARGB(
+                                                                            255,
+                                                                            216,
+                                                                            211,
+                                                                            210),
+                                                                      ),
+                                                                    ),
+                                                                    fillColor:
+                                                                        Colors
+                                                                            .white,
+                                                                    filled:
+                                                                        true),
+                                                          ),
+                                                        ),
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsets.all(
+                                                                  8.0),
+                                                          child: TextField(
+                                                            controller:
+                                                                customerphoneController,
+                                                            decoration:
+                                                                const InputDecoration(
+                                                                    hintText:
+                                                                        'Customer Phone',
+                                                                    hintStyle: TextStyle(
+                                                                        fontWeight:
+                                                                            FontWeight
+                                                                                .bold,
+                                                                        color: Color.fromARGB(
+                                                                            255,
+                                                                            201,
+                                                                            199,
+                                                                            199)),
+                                                                    enabledBorder:
+                                                                        OutlineInputBorder(
+                                                                      borderSide:
+                                                                          BorderSide(
+                                                                        color: Colors
+                                                                            .white,
+                                                                      ),
+                                                                    ),
+                                                                    focusedBorder:
+                                                                        OutlineInputBorder(
+                                                                      borderSide:
+                                                                          BorderSide(
+                                                                        color: Color.fromARGB(
+                                                                            255,
+                                                                            216,
+                                                                            211,
+                                                                            210),
+                                                                      ),
+                                                                    ),
+                                                                    fillColor:
+                                                                        Colors
+                                                                            .white,
+                                                                    filled:
+                                                                        true),
+                                                          ),
+                                                        ),
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsets.all(
+                                                                  8.0),
+                                                          child: TextField(
+                                                            controller:
+                                                                customertypeController,
+                                                            decoration:
+                                                                const InputDecoration(
+                                                                    hintText:
+                                                                        'Customer Type',
+                                                                    hintStyle: TextStyle(
+                                                                        fontWeight:
+                                                                            FontWeight
+                                                                                .bold,
+                                                                        color: Color.fromARGB(
+                                                                            255,
+                                                                            201,
+                                                                            199,
+                                                                            199)),
+                                                                    enabledBorder:
+                                                                        OutlineInputBorder(
+                                                                      borderSide:
+                                                                          BorderSide(
+                                                                        color: Colors
+                                                                            .white,
+                                                                      ),
+                                                                    ),
+                                                                    focusedBorder:
+                                                                        OutlineInputBorder(
+                                                                      borderSide:
+                                                                          BorderSide(
+                                                                        color: Color.fromARGB(
+                                                                            255,
+                                                                            216,
+                                                                            211,
+                                                                            210),
+                                                                      ),
+                                                                    ),
+                                                                    fillColor:
+                                                                        Colors
+                                                                            .white,
+                                                                    filled:
+                                                                        true),
+                                                          ),
+                                                        ),
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .all(8.0),
+                                                          child: ElevatedButton(
+                                                            onPressed: () {
+                                                              final customer_name =
+                                                                  customernameController
+                                                                      .text;
+                                                              final customer_id =
+                                                                  customeridController
+                                                                      .text;
+                                                              final customer_comment =
+                                                                  customercommentController
+                                                                      .text;
+                                                              final customer_email =
+                                                                  customeremailController
+                                                                      .text;
+                                                              final customer_phone =
+                                                                  customerphoneController
+                                                                      .text;
+                                                              final customer_type =
+                                                                  customertypeController
+                                                                      .text;
+                                                              customerFeedback(
+                                                                  customer_name:
+                                                                      customer_name,
+                                                                  customer_type:
+                                                                      customer_type,
+                                                                  customer_email:
+                                                                      customer_email,
+                                                                  customer_phone:
+                                                                      customer_phone,
+                                                                  customer_comment:
+                                                                      customer_comment,
+                                                                  customer_id:
+                                                                      customer_id);
+                                                              Navigator.of(ctx)
+                                                                  .pop();
+                                                            },
+                                                            style:
+                                                                ElevatedButton
+                                                                    .styleFrom(
+                                                              backgroundColor:
+                                                                  const Color
+                                                                          .fromARGB(
+                                                                      255,
+                                                                      121,
+                                                                      22,
+                                                                      15),
+                                                              minimumSize:
+                                                                  const Size(
+                                                                      300, 50),
+                                                              shape: RoundedRectangleBorder(
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              8)),
+                                                            ),
+                                                            child: const Text(
+                                                                'Save Details'),
+                                                          ),
+                                                        )
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ));
+                                },
                                 child: Icon(Icons.house),
                               ),
                               const SizedBox(
                                 height: 10,
                               ),
                               const Text(
-                                'History',
+                                'Feedback',
                                 style: TextStyle(
                                   color: const Color.fromARGB(255, 121, 22, 15),
                                 ),
