@@ -239,324 +239,348 @@ class _ClientProfileState extends State<ClientProfile> {
                         showDialog(
                             context: context,
                             builder: (ctx) => AlertDialog(
-                                backgroundColor:
-                                    Color.fromARGB(255, 194, 193, 193),
-                                content: Stack(
-                                  children: <Widget>[
-                                    Form(
-                                      child: SingleChildScrollView(
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.min,
-                                          children: <Widget>[
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.all(8.0),
-                                              child: Positioned(
-                                                top: -190.0,
-                                                child: InkResponse(
-                                                  onTap: () {
-                                                    Navigator.of(context).pop();
-                                                  },
-                                                  child: const CircleAvatar(
-                                                    child: Icon(Icons.close),
-                                                    backgroundColor:
-                                                        const Color.fromARGB(
-                                                            255, 121, 22, 15),
+                                  backgroundColor:
+                                      Color.fromARGB(255, 194, 193, 193),
+                                  content: Stack(
+                                    children: <Widget>[
+                                      Form(
+                                        child: SingleChildScrollView(
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: <Widget>[
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(8.0),
+                                                child: Positioned(
+                                                  top: -190.0,
+                                                  child: InkResponse(
+                                                    onTap: () {
+                                                      Navigator.of(context)
+                                                          .pop();
+                                                    },
+                                                    child: const CircleAvatar(
+                                                      child: Icon(Icons.close),
+                                                      backgroundColor:
+                                                          const Color.fromARGB(
+                                                              255, 121, 22, 15),
+                                                    ),
                                                   ),
                                                 ),
                                               ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsets.all(8.0),
-                                              child: TextField(
-                                                controller: fullnameController,
-                                                decoration:
-                                                    const InputDecoration(
-                                                        hintText: 'Full Name',
-                                                        hintStyle: TextStyle(
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            color:
-                                                                Color.fromARGB(
-                                                                    255,
-                                                                    201,
-                                                                    199,
-                                                                    199)),
-                                                        enabledBorder:
-                                                            OutlineInputBorder(
-                                                          borderSide:
-                                                              BorderSide(
-                                                            color: Colors.white,
+                                              Padding(
+                                                padding: EdgeInsets.all(8.0),
+                                                child: TextField(
+                                                  controller:
+                                                      fullnameController,
+                                                  decoration:
+                                                      const InputDecoration(
+                                                          hintText: 'Full Name',
+                                                          hintStyle: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              color:
+                                                                  Color
+                                                                      .fromARGB(
+                                                                          255,
+                                                                          201,
+                                                                          199,
+                                                                          199)),
+                                                          enabledBorder:
+                                                              OutlineInputBorder(
+                                                            borderSide:
+                                                                BorderSide(
+                                                              color:
+                                                                  Colors.white,
+                                                            ),
                                                           ),
-                                                        ),
-                                                        focusedBorder:
-                                                            OutlineInputBorder(
-                                                          borderSide:
-                                                              BorderSide(
-                                                            color:
-                                                                Color.fromARGB(
-                                                                    255,
-                                                                    216,
-                                                                    211,
-                                                                    210),
+                                                          focusedBorder:
+                                                              OutlineInputBorder(
+                                                            borderSide:
+                                                                BorderSide(
+                                                              color: Color
+                                                                  .fromARGB(
+                                                                      255,
+                                                                      216,
+                                                                      211,
+                                                                      210),
+                                                            ),
                                                           ),
-                                                        ),
-                                                        fillColor: Colors.white,
-                                                        filled: true),
-                                              ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsets.all(8.0),
-                                              child: TextField(
-                                                controller: usernameController,
-                                                decoration:
-                                                    const InputDecoration(
-                                                        hintText: 'Username',
-                                                        hintStyle: TextStyle(
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            color:
-                                                                Color.fromARGB(
-                                                                    255,
-                                                                    201,
-                                                                    199,
-                                                                    199)),
-                                                        enabledBorder:
-                                                            OutlineInputBorder(
-                                                          borderSide:
-                                                              BorderSide(
-                                                            color: Colors.white,
-                                                          ),
-                                                        ),
-                                                        focusedBorder:
-                                                            OutlineInputBorder(
-                                                          borderSide:
-                                                              BorderSide(
-                                                            color:
-                                                                Color.fromARGB(
-                                                                    255,
-                                                                    216,
-                                                                    211,
-                                                                    210),
-                                                          ),
-                                                        ),
-                                                        fillColor: Colors.white,
-                                                        filled: true),
-                                              ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsets.all(8.0),
-                                              child: TextField(
-                                                controller: emailController,
-                                                decoration:
-                                                    const InputDecoration(
-                                                        hintText: 'Email',
-                                                        hintStyle: TextStyle(
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            color:
-                                                                Color.fromARGB(
-                                                                    255,
-                                                                    201,
-                                                                    199,
-                                                                    199)),
-                                                        enabledBorder:
-                                                            OutlineInputBorder(
-                                                          borderSide:
-                                                              BorderSide(
-                                                            color: Colors.white,
-                                                          ),
-                                                        ),
-                                                        focusedBorder:
-                                                            OutlineInputBorder(
-                                                          borderSide:
-                                                              BorderSide(
-                                                            color:
-                                                                Color.fromARGB(
-                                                                    255,
-                                                                    216,
-                                                                    211,
-                                                                    210),
-                                                          ),
-                                                        ),
-                                                        fillColor: Colors.white,
-                                                        filled: true),
-                                              ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsets.all(8.0),
-                                              child: TextField(
-                                                controller: clientidController,
-                                                decoration:
-                                                    const InputDecoration(
-                                                        hintText: 'Client ID',
-                                                        hintStyle: TextStyle(
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            color:
-                                                                Color.fromARGB(
-                                                                    255,
-                                                                    201,
-                                                                    199,
-                                                                    199)),
-                                                        enabledBorder:
-                                                            OutlineInputBorder(
-                                                          borderSide:
-                                                              BorderSide(
-                                                            color: Colors.white,
-                                                          ),
-                                                        ),
-                                                        focusedBorder:
-                                                            OutlineInputBorder(
-                                                          borderSide:
-                                                              BorderSide(
-                                                            color:
-                                                                Color.fromARGB(
-                                                                    255,
-                                                                    216,
-                                                                    211,
-                                                                    210),
-                                                          ),
-                                                        ),
-                                                        fillColor: Colors.white,
-                                                        filled: true),
-                                              ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsets.all(8.0),
-                                              child: TextField(
-                                                controller: phoneController,
-                                                decoration:
-                                                    const InputDecoration(
-                                                        hintText: 'Phone',
-                                                        hintStyle: TextStyle(
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            color:
-                                                                Color.fromARGB(
-                                                                    255,
-                                                                    201,
-                                                                    199,
-                                                                    199)),
-                                                        enabledBorder:
-                                                            OutlineInputBorder(
-                                                          borderSide:
-                                                              BorderSide(
-                                                            color: Colors.white,
-                                                          ),
-                                                        ),
-                                                        focusedBorder:
-                                                            OutlineInputBorder(
-                                                          borderSide:
-                                                              BorderSide(
-                                                            color:
-                                                                Color.fromARGB(
-                                                                    255,
-                                                                    216,
-                                                                    211,
-                                                                    210),
-                                                          ),
-                                                        ),
-                                                        fillColor: Colors.white,
-                                                        filled: true),
-                                              ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsets.all(8.0),
-                                              child: TextField(
-                                                controller: addressController,
-                                                decoration:
-                                                    const InputDecoration(
-                                                        hintText: 'Address',
-                                                        hintStyle: TextStyle(
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            color:
-                                                                Color.fromARGB(
-                                                                    255,
-                                                                    201,
-                                                                    199,
-                                                                    199)),
-                                                        enabledBorder:
-                                                            OutlineInputBorder(
-                                                          borderSide:
-                                                              BorderSide(
-                                                            color: Colors.white,
-                                                          ),
-                                                        ),
-                                                        focusedBorder:
-                                                            OutlineInputBorder(
-                                                          borderSide:
-                                                              BorderSide(
-                                                            color:
-                                                                Color.fromARGB(
-                                                                    255,
-                                                                    216,
-                                                                    211,
-                                                                    210),
-                                                          ),
-                                                        ),
-                                                        fillColor: Colors.white,
-                                                        filled: true),
-                                              ),
-                                            ),
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.all(8.0),
-                                              child: ElevatedButton(
-                                                onPressed: () {
-                                                        final full_name =
-                                                          fullnameController
-                                                              .text;
-                                                      final client_id = clientidController.text;
-                                                      final username =usernameController.text;
-                                                      final address =
-                                                          addressController
-                                                              .text;
-                                                      final phone =
-                                                          phoneController
-                                                              .text;
-                                                      final email =
-                                                          emailController
-                                                              .text;
-                                                     
-
-                                                      createProfile(
-                                                          full_name: full_name,
-                                                          username: username,
-                                                          address: address,
-                                                          client_id: client_id,
-                                                          email:
-                                                              email,
-                                                          phone:
-                                                              phone,
-                                                         );
-                                                      Navigator.of(ctx).pop();
-                                                    
-                                                },
-                                                style: ElevatedButton.styleFrom(
-                                                  backgroundColor:
-                                                      const Color.fromARGB(
-                                                          255, 121, 22, 15),
-                                                  minimumSize:
-                                                      const Size(300, 50),
-                                                  shape: RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8)),
+                                                          fillColor:
+                                                              Colors.white,
+                                                          filled: true),
                                                 ),
-                                                child:
-                                                    const Text('Save Details'),
                                               ),
-                                            )
-                                          ],
+                                              Padding(
+                                                padding: EdgeInsets.all(8.0),
+                                                child: TextField(
+                                                  controller:
+                                                      usernameController,
+                                                  decoration:
+                                                      const InputDecoration(
+                                                          hintText: 'Username',
+                                                          hintStyle: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              color:
+                                                                  Color
+                                                                      .fromARGB(
+                                                                          255,
+                                                                          201,
+                                                                          199,
+                                                                          199)),
+                                                          enabledBorder:
+                                                              OutlineInputBorder(
+                                                            borderSide:
+                                                                BorderSide(
+                                                              color:
+                                                                  Colors.white,
+                                                            ),
+                                                          ),
+                                                          focusedBorder:
+                                                              OutlineInputBorder(
+                                                            borderSide:
+                                                                BorderSide(
+                                                              color: Color
+                                                                  .fromARGB(
+                                                                      255,
+                                                                      216,
+                                                                      211,
+                                                                      210),
+                                                            ),
+                                                          ),
+                                                          fillColor:
+                                                              Colors.white,
+                                                          filled: true),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsets.all(8.0),
+                                                child: TextField(
+                                                  controller: emailController,
+                                                  decoration:
+                                                      const InputDecoration(
+                                                          hintText: 'Email',
+                                                          hintStyle: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              color:
+                                                                  Color
+                                                                      .fromARGB(
+                                                                          255,
+                                                                          201,
+                                                                          199,
+                                                                          199)),
+                                                          enabledBorder:
+                                                              OutlineInputBorder(
+                                                            borderSide:
+                                                                BorderSide(
+                                                              color:
+                                                                  Colors.white,
+                                                            ),
+                                                          ),
+                                                          focusedBorder:
+                                                              OutlineInputBorder(
+                                                            borderSide:
+                                                                BorderSide(
+                                                              color: Color
+                                                                  .fromARGB(
+                                                                      255,
+                                                                      216,
+                                                                      211,
+                                                                      210),
+                                                            ),
+                                                          ),
+                                                          fillColor:
+                                                              Colors.white,
+                                                          filled: true),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsets.all(8.0),
+                                                child: TextField(
+                                                  controller:
+                                                      clientidController,
+                                                  decoration:
+                                                      const InputDecoration(
+                                                          hintText: 'Client ID',
+                                                          hintStyle: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              color:
+                                                                  Color
+                                                                      .fromARGB(
+                                                                          255,
+                                                                          201,
+                                                                          199,
+                                                                          199)),
+                                                          enabledBorder:
+                                                              OutlineInputBorder(
+                                                            borderSide:
+                                                                BorderSide(
+                                                              color:
+                                                                  Colors.white,
+                                                            ),
+                                                          ),
+                                                          focusedBorder:
+                                                              OutlineInputBorder(
+                                                            borderSide:
+                                                                BorderSide(
+                                                              color: Color
+                                                                  .fromARGB(
+                                                                      255,
+                                                                      216,
+                                                                      211,
+                                                                      210),
+                                                            ),
+                                                          ),
+                                                          fillColor:
+                                                              Colors.white,
+                                                          filled: true),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsets.all(8.0),
+                                                child: TextField(
+                                                  controller: phoneController,
+                                                  decoration:
+                                                      const InputDecoration(
+                                                          hintText: 'Phone',
+                                                          hintStyle: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              color:
+                                                                  Color
+                                                                      .fromARGB(
+                                                                          255,
+                                                                          201,
+                                                                          199,
+                                                                          199)),
+                                                          enabledBorder:
+                                                              OutlineInputBorder(
+                                                            borderSide:
+                                                                BorderSide(
+                                                              color:
+                                                                  Colors.white,
+                                                            ),
+                                                          ),
+                                                          focusedBorder:
+                                                              OutlineInputBorder(
+                                                            borderSide:
+                                                                BorderSide(
+                                                              color: Color
+                                                                  .fromARGB(
+                                                                      255,
+                                                                      216,
+                                                                      211,
+                                                                      210),
+                                                            ),
+                                                          ),
+                                                          fillColor:
+                                                              Colors.white,
+                                                          filled: true),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsets.all(8.0),
+                                                child: TextField(
+                                                  controller: addressController,
+                                                  decoration:
+                                                      const InputDecoration(
+                                                          hintText: 'Address',
+                                                          hintStyle: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              color:
+                                                                  Color
+                                                                      .fromARGB(
+                                                                          255,
+                                                                          201,
+                                                                          199,
+                                                                          199)),
+                                                          enabledBorder:
+                                                              OutlineInputBorder(
+                                                            borderSide:
+                                                                BorderSide(
+                                                              color:
+                                                                  Colors.white,
+                                                            ),
+                                                          ),
+                                                          focusedBorder:
+                                                              OutlineInputBorder(
+                                                            borderSide:
+                                                                BorderSide(
+                                                              color: Color
+                                                                  .fromARGB(
+                                                                      255,
+                                                                      216,
+                                                                      211,
+                                                                      210),
+                                                            ),
+                                                          ),
+                                                          fillColor:
+                                                              Colors.white,
+                                                          filled: true),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(8.0),
+                                                child: ElevatedButton(
+                                                  onPressed: () {
+                                                    final full_name =
+                                                        fullnameController.text;
+                                                    final client_id =
+                                                        clientidController.text;
+                                                    final username =
+                                                        usernameController.text;
+                                                    final address =
+                                                        addressController.text;
+                                                    final phone =
+                                                        phoneController.text;
+                                                    final email =
+                                                        emailController.text;
+
+                                                    createProfile(
+                                                      full_name: full_name,
+                                                      username: username,
+                                                      address: address,
+                                                      client_id: client_id,
+                                                      email: email,
+                                                      phone: phone,
+                                                    );
+                                                    Navigator.of(ctx).pop();
+                                                  },
+                                                  style:
+                                                      ElevatedButton.styleFrom(
+                                                    backgroundColor:
+                                                        const Color.fromARGB(
+                                                            255, 121, 22, 15),
+                                                    minimumSize:
+                                                        const Size(300, 50),
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        8)),
+                                                  ),
+                                                  child: const Text(
+                                                      'Save Details'),
+                                                ),
+                                              )
+                                            ],
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                              
-                        ));
+                                    ],
+                                  ),
+                                ));
                       },
                       child: const Center(
                           child: Text('Edit Details',
