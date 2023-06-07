@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/sidenav/sidenav.dart';
@@ -11,6 +12,20 @@ class ClientDash extends StatefulWidget {
 }
 
 class _ClientDashState extends State<ClientDash> {
+    User? _currentUser;
+
+  void initState() {
+    super.initState();
+    _getCurrentUser();
+  }
+
+  void _getCurrentUser() {
+    FirebaseAuth auth = FirebaseAuth.instance;
+    User? user = auth.currentUser;
+    setState(() {
+      _currentUser = user;
+    });
+  }
   /* variable declaration */
   final customernameController = TextEditingController();
   final customeridController = TextEditingController();
@@ -60,12 +75,23 @@ class _ClientDashState extends State<ClientDash> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text(
-                        'Good Afternoon, Jenipher ',
-                        style: TextStyle(
-                            fontFamily: AutofillHints.addressState,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18),
+                      Row(
+                        children: [
+                          Text(
+                           "Welcome ",
+                            style: TextStyle(
+                                fontFamily: AutofillHints.addressState,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
+                          Text(
+                            _currentUser!.email ?? '',
+                            style: TextStyle(
+                                fontFamily: AutofillHints.addressState,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
+                        ],
                       ),
                       const SizedBox(
                         width: 35,

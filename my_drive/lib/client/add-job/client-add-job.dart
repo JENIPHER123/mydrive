@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/sidenav/sidenav.dart';
@@ -11,6 +12,24 @@ class ClientAddJob extends StatefulWidget {
 }
 
 class _ClientAddJobState extends State<ClientAddJob> {
+/*   final CollectionReference _Alerts =
+      FirebaseFirestore.instance.collection('Jobs'); */
+
+  User? _currentUser;
+
+  void initState() {
+    super.initState();
+    _getCurrentUser();
+  }
+
+  void _getCurrentUser() {
+    FirebaseAuth auth = FirebaseAuth.instance;
+    User? user = auth.currentUser;
+    setState(() {
+      _currentUser = user;
+    });
+  }
+
   final cartypeController = TextEditingController();
   final jobareaController = TextEditingController();
   final jobperiodController = TextEditingController();
@@ -42,7 +61,9 @@ Updating Database
       required String job_status,
       required String pay,
       required String resuirements}) async {
-    final docUser = FirebaseFirestore.instance.collection('jobs').doc('job_31');
+    final docUser = FirebaseFirestore.instance
+        .collection('jobs')
+        .doc(_currentUser!.email ?? '');
     final json = {
       'car_type': car_type,
       'client_is': client_id,
@@ -75,8 +96,15 @@ Updating Database
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      const Text(
-                        'Good Afternoon, Kimanzi123',
+                      Text(
+                        "Welcome ",
+                        style: TextStyle(
+                            fontFamily: AutofillHints.addressState,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18),
+                      ),
+                      Text(
+                        _currentUser!.email ?? '',
                         style: TextStyle(
                             fontFamily: AutofillHints.addressState,
                             fontWeight: FontWeight.bold,
