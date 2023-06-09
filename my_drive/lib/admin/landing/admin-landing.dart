@@ -24,7 +24,7 @@ class _AdminLandingState extends State<AdminLanding> {
         backgroundColor: const Color.fromARGB(255, 121, 22, 15),
         title: const Text('View App Settings'),
       ),
-      body: Center(
+      body:Center(
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -55,16 +55,16 @@ class _AdminLandingState extends State<AdminLanding> {
                           ),
                           Card(
                             child: ListTile(
-                              title: Text('First Quarter Of The Year'),
+                              title: Text('Alerts and Notifications'),
                               subtitle: Row(
                                 children: [
                                   const Text(
-                                    '2022 TOTAL PROFIT : ',
+                                    'STAY UPDATED ALL DAY: ',
                                   ),
                                   const SizedBox(
-                                    width: 5,
+                                    width: 10,
                                   ),
-                                  const Text('33,111,000'),
+                                  const Text(' 2023 '),
                                   const SizedBox(
                                     width: 10,
                                   ),
@@ -74,6 +74,82 @@ class _AdminLandingState extends State<AdminLanding> {
                                       activeColor: Colors.red,
                                       onChanged: (bool value) {
                                         // This is called when the user toggles the switch.
+                                        if (light5 == false) {
+                                          showDialog(
+                                              context: context,
+                                              builder: (ctx) => AlertDialog(
+                                                    title: const Text(
+                                                      "Alerts and Notification ",
+                                                      style: TextStyle(
+                                                        color: Color.fromARGB(
+                                                            255, 121, 22, 15),
+                                                      ),
+                                                    ),
+                                                    content: const Text(
+                                                        'Alerts and notifications turned on!!..'),
+                                                    actions: <Widget>[
+                                                      TextButton(
+                                                        onPressed: () {
+                                                          Navigator.of(ctx)
+                                                              .pop();
+                                                        },
+                                                        child: Container(
+                                                          color: const Color
+                                                                  .fromARGB(
+                                                              255, 121, 22, 15),
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .all(14),
+                                                          child: const Text(
+                                                            "okay",
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .white),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ));
+                                          print('alerts on');
+                                        }
+                                        if (light5 == true) {
+                                          showDialog(
+                                              context: context,
+                                              builder: (ctx) => AlertDialog(
+                                                    title: const Text(
+                                                      "Alerts and Notifications",
+                                                      style: TextStyle(
+                                                        color: Color.fromARGB(
+                                                            255, 121, 22, 15),
+                                                      ),
+                                                    ),
+                                                    content: const Text(
+                                                        'Alerts and Notifications turned off!!!..'),
+                                                    actions: <Widget>[
+                                                      TextButton(
+                                                        onPressed: () {
+                                                          Navigator.of(ctx)
+                                                              .pop();
+                                                        },
+                                                        child: Container(
+                                                          color: const Color
+                                                                  .fromARGB(
+                                                              255, 121, 22, 15),
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .all(14),
+                                                          child: const Text(
+                                                            "okay",
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .white),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ));
+                                          print('not on');
+                                        }
                                         setState(() {
                                           light5 = value;
                                         });
@@ -87,16 +163,16 @@ class _AdminLandingState extends State<AdminLanding> {
                           ),
                           Card(
                             child: ListTile(
-                              title: Text('First Quarter Of The Year'),
+                              title: Text('Add Email To Mailing List'),
                               subtitle: Row(
                                 children: [
                                   const Text(
-                                    '2022 TOTAL PROFIT : ',
+                                    'ADD MYSELF TO  LIST : ',
                                   ),
                                   const SizedBox(
-                                    width: 5,
+                                    width: 25,
                                   ),
-                                  const Text('33,111,000'),
+                                  const Text('2023'),
                                   const SizedBox(
                                     width: 10,
                                   ),
@@ -106,6 +182,82 @@ class _AdminLandingState extends State<AdminLanding> {
                                       activeColor: Colors.red,
                                       onChanged: (bool value) {
                                         // This is called when the user toggles the switch.
+                                        if (light1 == false) {
+                                          showDialog(
+                                              context: context,
+                                              builder: (ctx) => AlertDialog(
+                                                    title: const Text(
+                                                      "Add Email to Mailing List",
+                                                      style: TextStyle(
+                                                        color: Color.fromARGB(
+                                                            255, 121, 22, 15),
+                                                      ),
+                                                    ),
+                                                    content: const Text(
+                                                        'Your email will now be added to our mailing list!!..'),
+                                                    actions: <Widget>[
+                                                      TextButton(
+                                                        onPressed: () {
+                                                          Navigator.of(ctx)
+                                                              .pop();
+                                                        },
+                                                        child: Container(
+                                                          color: const Color
+                                                                  .fromARGB(
+                                                              255, 121, 22, 15),
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .all(14),
+                                                          child: const Text(
+                                                            "okay",
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .white),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ));
+                                          print('alerts on');
+                                        }
+                                        if (light1 == true) {
+                                          showDialog(
+                                              context: context,
+                                              builder: (ctx) => AlertDialog(
+                                                    title: const Text(
+                                                      "Add Email To Mailing List",
+                                                      style: TextStyle(
+                                                        color: Color.fromARGB(
+                                                            255, 121, 22, 15),
+                                                      ),
+                                                    ),
+                                                    content: const Text(
+                                                        'Your Email is now removed from our mailing list!!!..'),
+                                                    actions: <Widget>[
+                                                      TextButton(
+                                                        onPressed: () {
+                                                          Navigator.of(ctx)
+                                                              .pop();
+                                                        },
+                                                        child: Container(
+                                                          color: const Color
+                                                                  .fromARGB(
+                                                              255, 121, 22, 15),
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .all(14),
+                                                          child: const Text(
+                                                            "okay",
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .white),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ));
+                                          print('not on');
+                                        }
                                         setState(() {
                                           light1 = value;
                                         });
@@ -119,16 +271,16 @@ class _AdminLandingState extends State<AdminLanding> {
                           ),
                           Card(
                             child: ListTile(
-                              title: Text('First Quarter Of The Year'),
+                              title: const Text('Automatic App Updates'),
                               subtitle: Row(
                                 children: [
                                   const Text(
-                                    '2022 TOTAL PROFIT : ',
+                                    'ACTIVATE AUTO UPDATE : ',
                                   ),
                                   const SizedBox(
-                                    width: 5,
+                                    width: 6,
                                   ),
-                                  const Text('33,111,000'),
+                                  const Text('2023'),
                                   const SizedBox(
                                     width: 10,
                                   ),
@@ -138,6 +290,82 @@ class _AdminLandingState extends State<AdminLanding> {
                                       activeColor: Colors.red,
                                       onChanged: (bool value) {
                                         // This is called when the user toggles the switch.
+                                        if (light4 == false) {
+                                          showDialog(
+                                              context: context,
+                                              builder: (ctx) => AlertDialog(
+                                                    title: const Text(
+                                                      "Automatic App Updates ",
+                                                      style: TextStyle(
+                                                        color: Color.fromARGB(
+                                                            255, 121, 22, 15),
+                                                      ),
+                                                    ),
+                                                    content: const Text(
+                                                        'Automatic Updates is now on!!..'),
+                                                    actions: <Widget>[
+                                                      TextButton(
+                                                        onPressed: () {
+                                                          Navigator.of(ctx)
+                                                              .pop();
+                                                        },
+                                                        child: Container(
+                                                          color: const Color
+                                                                  .fromARGB(
+                                                              255, 121, 22, 15),
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .all(14),
+                                                          child: const Text(
+                                                            "okay",
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .white),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ));
+                                          print('alerts on');
+                                        }
+                                        if (light4 == true) {
+                                          showDialog(
+                                              context: context,
+                                              builder: (ctx) => AlertDialog(
+                                                    title: const Text(
+                                                      "Automatic App Updates",
+                                                      style: TextStyle(
+                                                        color: Color.fromARGB(
+                                                            255, 121, 22, 15),
+                                                      ),
+                                                    ),
+                                                    content: const Text(
+                                                        'Automatic Updates is turned off!!!..'),
+                                                    actions: <Widget>[
+                                                      TextButton(
+                                                        onPressed: () {
+                                                          Navigator.of(ctx)
+                                                              .pop();
+                                                        },
+                                                        child: Container(
+                                                          color: const Color
+                                                                  .fromARGB(
+                                                              255, 121, 22, 15),
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .all(14),
+                                                          child: const Text(
+                                                            "okay",
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .white),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ));
+                                          print('not on');
+                                        }
                                         setState(() {
                                           light4 = value;
                                         });
@@ -151,16 +379,16 @@ class _AdminLandingState extends State<AdminLanding> {
                           ),
                           Card(
                             child: ListTile(
-                              title: Text('First Quarter Of The Year'),
+                              title: const Text('Hide My Profile'),
                               subtitle: Row(
                                 children: [
                                   const Text(
-                                    '2022 TOTAL PROFIT : ',
+                                    'HIDE PROFILE TO OTHERS : ',
                                   ),
                                   const SizedBox(
-                                    width: 5,
+                                    width: 1,
                                   ),
-                                  const Text('33,111,000'),
+                                  const Text('2023'),
                                   const SizedBox(
                                     width: 10,
                                   ),
@@ -170,6 +398,82 @@ class _AdminLandingState extends State<AdminLanding> {
                                       activeColor: Colors.red,
                                       onChanged: (bool value) {
                                         // This is called when the user toggles the switch.
+                                        if (light2 == false) {
+                                          showDialog(
+                                              context: context,
+                                              builder: (ctx) => AlertDialog(
+                                                    title: const Text(
+                                                      "Hide My Profile ",
+                                                      style: TextStyle(
+                                                        color: Color.fromARGB(
+                                                            255, 121, 22, 15),
+                                                      ),
+                                                    ),
+                                                    content: const Text(
+                                                        'Your profile can be seen by other users!!..'),
+                                                    actions: <Widget>[
+                                                      TextButton(
+                                                        onPressed: () {
+                                                          Navigator.of(ctx)
+                                                              .pop();
+                                                        },
+                                                        child: Container(
+                                                          color: const Color
+                                                                  .fromARGB(
+                                                              255, 121, 22, 15),
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .all(14),
+                                                          child: const Text(
+                                                            "okay",
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .white),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ));
+                                          print('alerts on');
+                                        }
+                                        if (light2 == true) {
+                                          showDialog(
+                                              context: context,
+                                              builder: (ctx) => AlertDialog(
+                                                    title: const Text(
+                                                      "Hide My Profile",
+                                                      style: TextStyle(
+                                                        color: Color.fromARGB(
+                                                            255, 121, 22, 15),
+                                                      ),
+                                                    ),
+                                                    content: const Text(
+                                                        'Your Profile is now hidden to other users!!!..'),
+                                                    actions: <Widget>[
+                                                      TextButton(
+                                                        onPressed: () {
+                                                          Navigator.of(ctx)
+                                                              .pop();
+                                                        },
+                                                        child: Container(
+                                                          color: const Color
+                                                                  .fromARGB(
+                                                              255, 121, 22, 15),
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .all(14),
+                                                          child: const Text(
+                                                            "okay",
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .white),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ));
+                                          print('not on');
+                                        }
                                         setState(() {
                                           light2 = value;
                                         });
@@ -180,35 +484,6 @@ class _AdminLandingState extends State<AdminLanding> {
                           ),
                           const SizedBox(
                             height: 20,
-                          ),
-                          Card(
-                            child: ListTile(
-                              title: Text('First Quarter Of The Year'),
-                              subtitle: Row(
-                                children: [
-                                  const Text(
-                                    '2022 TOTAL PROFIT : ',
-                                  ),
-                                  const SizedBox(
-                                    width: 5,
-                                  ),
-                                  const Text('33,111,000'),
-                                  const SizedBox(
-                                    width: 10,
-                                  ),
-                                  Switch(
-                                      // This bool value toggles the switch.
-                                      value: light3,
-                                      activeColor: Colors.red,
-                                      onChanged: (bool value) {
-                                        // This is called when the user toggles the switch.
-                                        setState(() {
-                                          light3 = value;
-                                        });
-                                      })
-                                ],
-                              ),
-                            ),
                           ),
                           Divider(),
                         ],
